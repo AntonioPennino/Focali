@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Cart } from './components/Cart';
@@ -6,8 +7,12 @@ import { HomePage } from './components/HomePage';
 import { AboutPage } from './components/AboutPage';
 import { TestingPage } from './components/TestingPage';
 import { ContactPage } from './components/ContactPage';
+import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
+import { TermsAndConditionsPage } from './components/TermsAndConditionsPage';
+import { CookieBanner } from './components/CookieBanner';
 import { Toaster } from './components/ui/sonner';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
+import { useEffect } from 'react';
 
 interface Product {
   id: number;
@@ -63,44 +68,19 @@ const PRODUCTS: Product[] = [
   }
 ];
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('home');
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-
-  // Simple client-side routing
-  useEffect(() => {
-    const handleNavigation = () => {
-      const path = window.location.pathname;
-      if (path === '/about') setCurrentPage('about');
-      else if (path === '/testing') setCurrentPage('testing');
-      else if (path === '/contact') setCurrentPage('contact');
-      else setCurrentPage('home');
-    };
-
-    handleNavigation();
-    window.addEventListener('popstate', handleNavigation);
-
-    // Handle link clicks
-    const handleClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const link = target.closest('a');
-      if (link && link.href.startsWith(window.location.origin)) {
-        e.preventDefault();
-        const path = new URL(link.href).pathname;
-        window.history.pushState({}, '', path);
-        handleNavigation();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    };
-
-    document.addEventListener('click', handleClick);
-
-    return () => {
-      window.removeEventListener('popstate', handleNavigation);
-      document.removeEventListener('click', handleClick);
-    };
-  }, []);
 
   const handleAddToCart = (product: Product) => {
     setCartItems((prev) => {
@@ -138,14 +118,16 @@ export default function App() {
         onCartClick={() => setCartOpen(true)}
         cartItemsCount={cartItemsCount}
       />
-
+      <ScrollToTop />
       <main className="flex-1">
-        {currentPage === 'home' && (
-          <HomePage products={PRODUCTS} onAddToCart={handleAddToCart} />
-        )}
-        {currentPage === 'about' && <AboutPage />}
-        {currentPage === 'testing' && <TestingPage />}
-        {currentPage === 'contact' && <ContactPage />}
+        <Routes>
+          <Route path="/" element={<HomePage products={PRODUCTS} onAddToCart={handleAddToCart} />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/testing" element={<TestingPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+        </Routes>
       </main>
 
       <Footer />
@@ -158,6 +140,7 @@ export default function App() {
         onUpdateQuantity={handleUpdateQuantity}
       />
 
+      <CookieBanner />
       <Toaster position="bottom-right" />
     </div>
   );

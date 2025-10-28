@@ -50,11 +50,16 @@ export function Footer() {
 
           {/* Support */}
           <div>
-            <h4 className="mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Supporto</h4>
+            <h4 className="mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Legale</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-white/70 hover:text-[#D97941] transition-colors">
-                  Garanzia e Resi
+                <a href="/privacy-policy" className="text-white/70 hover:text-[#D97941] transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/terms-and-conditions" className="text-white/70 hover:text-[#D97941] transition-colors">
+                  Termini e Condizioni
                 </a>
               </li>
               <li>
@@ -67,11 +72,6 @@ export function Footer() {
                   FAQ
                 </a>
               </li>
-              <li>
-                <a href="#" className="text-white/70 hover:text-[#D97941] transition-colors">
-                  Blog
-                </a>
-              </li>
             </ul>
           </div>
         </div>
@@ -79,7 +79,7 @@ export function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/60 text-sm">
-            © 2025 Focali. Tutti i diritti riservati. P.IVA 12345678901
+            © 2025 Focali. Tutti i diritti riservati. Vendita da privato.
           </p>
           
           {/* Social Links */}
