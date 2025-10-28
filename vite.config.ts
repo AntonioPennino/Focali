@@ -4,6 +4,11 @@
   import path from 'path';
 
   export default defineConfig({
+    // Use relative asset paths so the built app works when served from
+    // Netlify or any base path. This prevents leading-slash absolute
+    // references like `/assets/...` which can 404 if the site isn't
+    // mounted at root or when the hosting rewrites paths.
+    base: './',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
