@@ -4,8 +4,8 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Cart } from './components/Cart';
 import { HomePage } from './components/HomePage';
+import { ProductPage } from './components/ProductPage';
 import { AboutPage } from './components/AboutPage';
-import { TestingPage } from './components/TestingPage';
 import { ContactPage } from './components/ContactPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsAndConditionsPage } from './components/TermsAndConditionsPage';
@@ -90,19 +90,19 @@ export default function App() {
         onCartClick={() => setCartOpen(true)}
         cartItemsCount={cartItemsCount}
       />
+
       <ScrollToTop />
-      import { ProductPage } from './components/ProductPage';
-import { AboutPage } from './components/AboutPage';
-import { ContactPage } from './components/ContactPage';
-import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
-//...
+
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<HomePage products={PRODUCTS} onAddToCart={handleAddToCart} />} />
           <Route path="/product/:id" element={<ProductPage products={PRODUCTS} onAddToCart={handleAddToCart} />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-//...
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+        </Routes>
+      </main>
 
       <Footer />
 
