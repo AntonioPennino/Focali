@@ -1,5 +1,8 @@
 import { X, Trash2 } from 'lucide-react';
 import { Button } from './ui/button';
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { useState } from 'react';
+import { toast } from 'sonner';
 
 interface CartItem {
   id: number;
@@ -16,12 +19,68 @@ interface CartProps {
   items: CartItem[];
   onRemoveItem: (id: number) => void;
   onUpdateQuantity: (id: number, quantity: number) => void;
+  onSuccessfulCheckout: () => void;
 }
 
-export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity }: CartProps) {
+export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, onSuccessfulCheckout }: CartProps) {
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const [isProcessing, setIsProcessing] = useState(false);
 
   if (!isOpen) return null;
+
+  const paypalCreateOrder = async () => {
+    setIsProcessing(true);
+    try {
+      const response = await fetch("/.netlify/functions/create-paypal-order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ cart: items }),
+      });
+      const order = await response.json();
+      if (order.id) {
+        return order.id;
+      } else {
+        throw new Error(order.error || "Failed to create PayPal order.");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Si è verificato un errore durante la creazione dell'ordine. Riprova.");
+      setIsProcessing(false);
+      return null;
+    }
+  };
+
+  const paypalOnApprove = async (data: any) => {
+    try {
+      const response = await fetch("/.netlify/functions/capture-paypal-order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ orderID: data.orderID }),
+      });
+      const orderDetails = await response.json();
+      if (orderDetails.status === 'COMPLETED') {
+        toast.success("Pagamento completato con successo!");
+        onSuccessfulCheckout();
+      } else {
+        throw new Error(orderDetails.error || "Failed to capture PayPal order.");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Si è verificato un errore durante la conferma del pagamento. Riprova.");
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  const paypalOnError = (err: any) => {
+    console.error("PayPal Checkout Error", err);
+    toast.error("Si è verificato un errore con PayPal. Riprova o contatta l'assistenza.");
+    setIsProcessing(false);
+  };
 
   return (
     <>
@@ -108,16 +167,29 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity }:
               <div className="flex items-center justify-between">
                 <span>Totale</span>
                 <span style={{ fontSize: '1.5rem', fontFamily: 'Playfair Display, serif' }}>
-                  €{total}
+                  €{total.toFixed(2)}
                 </span>
               </div>
-              <Button className="w-full bg-[#D97941] hover:bg-[#A0522D] text-white">
-                Procedi al Checkout
-              </Button>
+              {isProcessing ? (
+                <div className="text-center">
+                  <p>Processando il pagamento...</p>
+                </div>
+              ) : (
+                <PayPalScriptProvider options={{ "client-id": import.meta.env.VITE_PAYPAL_CLIENT_ID || "test", currency: "EUR", intent: "capture" }}>
+                    <PayPalButtons 
+                        style={{ layout: "vertical", color: 'blue', shape: 'rect', label: 'pay' }}
+                        createOrder={paypalCreateOrder}
+                        onApprove={paypalOnApprove}
+                        onError={paypalOnError}
+                        disabled={isProcessing}
+                    />
+                </PayPalScriptProvider>
+              )}
               <Button
                 variant="outline"
                 className="w-full border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#E8DCC4]/30"
                 onClick={onClose}
+                disabled={isProcessing}
               >
                 Continua lo Shopping
               </Button>

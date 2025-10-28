@@ -3,6 +3,7 @@
       "version": "0.1.0",
       "private": true,
       "dependencies": {
+            "@paypal/react-paypal-js": "^8.9.2",
             "@radix-ui/react-accordion": "^1.2.3",
             "@radix-ui/react-alert-dialog": "^1.1.6",
             "@radix-ui/react-aspect-ratio": "^1.1.2",
@@ -48,10 +49,12 @@
             "vaul": "^1.1.2"
       },
       "devDependencies": {
+            "@netlify/functions": "^5.0.1",
             "@types/node": "^20.10.0",
             "@types/react": "^19.2.2",
             "@types/react-dom": "^19.2.2",
             "@vitejs/plugin-react-swc": "^3.10.2",
+            "typescript": "^5.9.3",
             "vite": "6.3.5"
       },
       "scripts": {

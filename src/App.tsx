@@ -82,6 +82,11 @@ export default function App() {
     );
   };
 
+  const handleSuccessfulCheckout = () => {
+    setCartItems([]);
+    setCartOpen(false);
+  };
+
   const cartItemsCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
@@ -112,6 +117,7 @@ export default function App() {
         items={cartItems}
         onRemoveItem={handleRemoveFromCart}
         onUpdateQuantity={handleUpdateQuantity}
+        onSuccessfulCheckout={handleSuccessfulCheckout}
       />
 
       <CookieBanner />
