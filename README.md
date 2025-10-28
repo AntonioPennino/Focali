@@ -1,11 +1,44 @@
 
   # Sito Web E-commerce Vintage
 
-  This is a code bundle for Sito Web E-commerce Vintage. The original project is available at https://www.figma.com/design/TmC069rw5UUqC9TyA5xqOt/Sito-Web-E-commerce-Vintage.
+  Questo repository contiene il codice sorgente del sito "Sito Web E-commerce Vintage" (app Vite + React).
 
-  ## Running the code
+  ## Eseguire in locale
 
-  Run `npm i` to install the dependencies.
+  1. Installa le dipendenze:
 
-  Run `npm run dev` to start the development server.
+    ```powershell
+    npm ci
+    ```
+
+  2. Avvia il server di sviluppo (hot-reload):
+
+    ```powershell
+    npm run dev
+    ```
+
+  3. Costruisci la versione di produzione:
+
+    ```powershell
+    npm run build
+    ```
+
+  4. Servi la build localmente per un controllo finale:
+
+    ```powershell
+    npx vite preview --port 5173
+    ```
+
+  ## Deploy
+
+  - Il progetto è pronto per essere pubblicato su Netlify (o altro hosting statico). È presente un file `netlify.toml` che definisce il comando di build e la cartella `dist` come pubblicazione.
+  - Per un deploy manuale con Netlify CLI:
+
+   ```powershell
+   npm ci
+   npm run build
+   netlify deploy --prod --dir=dist
+   ```
+
+  Nota: sono stati rimossi i riferimenti diretti a risorse di design (es. link a file Figma) e a impostazioni di GitHub Pages.
   
