@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Play } from 'lucide-react';
@@ -66,12 +67,13 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
           <div className="text-[#1A1A1A]" style={{ fontSize: '1.5rem', fontFamily: 'Playfair Display, serif' }}>
             €{product.price}
           </div>
-          <Button
-            onClick={() => onAddToCart(product)}
-            className="bg-[#D97941] hover:bg-[#A0522D] text-white transition-colors"
-          >
-            Scopri la Storia
-          </Button>
+          <Link to={`/product/${product.id}`}>
+            <Button
+              className="bg-[#D97941] hover:bg-[#A0522D] text-white transition-colors"
+            >
+              Scopri la Storia
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
