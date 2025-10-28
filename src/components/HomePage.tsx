@@ -2,7 +2,7 @@ import { Button } from './ui/button';
 import { ProductCard } from './ProductCard';
 import { Badge } from './ui/badge';
 import { CheckCircle2, Shield, Video, Star } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from './ImageWithFallback';
 
 interface Product {
   id: number;

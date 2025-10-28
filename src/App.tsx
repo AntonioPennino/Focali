@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -12,7 +12,6 @@ import { TermsAndConditionsPage } from './components/TermsAndConditionsPage';
 import { CookieBanner } from './components/CookieBanner';
 import { Toaster } from './components/ui/sonner';
 import { toast } from 'sonner';
-import { useEffect } from 'react';
 
 interface Product {
   id: number;
@@ -123,7 +122,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage products={PRODUCTS} onAddToCart={handleAddToCart} />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/testing" element={<TestingPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />

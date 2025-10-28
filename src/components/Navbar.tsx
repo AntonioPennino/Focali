@@ -32,9 +32,6 @@ export function Navbar({ onCartClick, cartItemsCount }: NavbarProps) {
             <a href="/about" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
               Chi Siamo
             </a>
-            <a href="/testing" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
-              Come Testiamo
-            </a>
             <a href="/contact" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
               Contatti
             </a>
@@ -83,13 +80,6 @@ export function Navbar({ onCartClick, cartItemsCount }: NavbarProps) {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Chi Siamo
-              </a>
-              <a
-                href="/testing"
-                className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Come Testiamo
               </a>
               <a
                 href="/contact"

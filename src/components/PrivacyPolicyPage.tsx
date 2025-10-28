@@ -23,19 +23,19 @@ export function PrivacyPolicyPage() {
 
           <h2>Titolare del Trattamento dei Dati</h2>
           <p>
-            [Il tuo Nome e Cognome], in qualità di venditore privato, con sede in [La tua Città, Indirizzo], email: [La tua Email].
+            Antonio Pennino, in qualità di venditore privato, con sede in Via Padre Pio, 86, Benevento, email: antonio.pennino.mail@gmail.com.
           </p>
           <p>
             Poiché questo sito opera come attività di vendita occasionale da parte di un privato e non è un'impresa, non è richiesta una Partita IVA ai sensi della normativa vigente per volumi di affari inferiori a 5.000€ annui.
           </p>
 
-          <h2>Quali Dati Raccogliamo</h2>
+          <h2>Quali Dati Raccogliamo e Perché (Finalità e Base Giuridica)</h2>
           <p>
             Raccogliamo dati per operare in modo efficace e fornirti le migliori esperienze con i nostri prodotti. Fornisci alcuni di questi dati direttamente, ad esempio quando:
           </p>
           <ul>
             <li>Ci contatti tramite il modulo di contatto (nome, email).</li>
-            <li>Effettui un acquisto (nome, indirizzo di spedizione, email, numero di telefono).</li>
+            <li>Effettui un acquisto (nome, cognome, indirizzo di spedizione, email, numero di telefono). La base giuridica di questo trattamento è l'esecuzione di un contratto di cui sei parte.</li>
           </ul>
           <p>
             Non raccogliamo né memorizziamo dati relativi ai pagamenti, che vengono gestiti interamente da fornitori di servizi di pagamento esterni (es. Stripe, PayPal), i quali agiscono come titolari autonomi del trattamento.
@@ -46,27 +46,36 @@ export function PrivacyPolicyPage() {
             Utilizziamo i dati che raccogliamo per le seguenti finalità:
           </p>
           <ul>
-            <li>Per fornire e gestire i nostri servizi, inclusa l'elaborazione degli ordini, la spedizione e l'assistenza clienti.</li>
-            <li>Per comunicare con te, rispondendo a commenti, domande e richieste.</li>
-            <li>Per adempiere agli obblighi legali e fiscali derivanti dalla vendita.</li>
+            <li><strong>Esecuzione del contratto:</strong> Per fornire e gestire i nostri servizi, inclusa l'elaborazione degli ordini, la spedizione e l'assistenza clienti.</li>
+            <li><strong>Comunicazioni:</strong> Per comunicare con te, rispondendo a commenti, domande e richieste.</li>
+            <li><strong>Adempimenti legali:</strong> Per adempiere agli obblighi legali e fiscali derivanti dalla vendita, come la conservazione delle scritture contabili.</li>
           </ul>
 
-          <h2>Condivisione dei Dati Personali</h2>
+          <h2>Chi Riceve i Dati (Destinatari)</h2>
           <p>
-            Non condividiamo i tuoi dati personali con terze parti, ad eccezione di:
+            Condividiamo i tuoi dati personali solo quando strettamente necessario e unicamente con le seguenti categorie di destinatari:
           </p>
           <ul>
-            <li>Corrieri e servizi di spedizione per la consegna dei prodotti.</li>
-            <li>Consulenti legali o fiscali, se necessario per adempiere agli obblighi di legge.</li>
-            <li>Piattaforme di pagamento per l'elaborazione delle transazioni.</li>
+            <li><strong>Corrieri e servizi di spedizione:</strong> Per consentire la consegna dei prodotti acquistati.</li>
+            <li><strong>Gestori di piattaforme di pagamento:</strong> Per processare il pagamento degli ordini.</li>
+            <li><strong>Consulenti e autorità competenti:</strong> Per adempiere a obblighi di legge, rispondere a procedimenti legali o a richieste da parte di autorità governative.</li>
           </ul>
 
-          <h2>Cookie e Tecnologie Simili</h2>
+          <h2>Cookie Policy</h2>
           <p>
-            Questo sito utilizza cookie tecnici essenziali per il suo funzionamento. Potremmo utilizzare anche cookie analitici anonimizzati per capire come viene utilizzato il sito e migliorare l'esperienza utente. Non utilizziamo cookie di profilazione o marketing.
+            Questo sito utilizza cookie per garantire il suo corretto funzionamento e per migliorare l'esperienza di navigazione. Di seguito trovi i dettagli sui tipi di cookie utilizzati.
           </p>
+          <h4>Cookie Tecnici</h4>
           <p>
-            Per maggiori dettagli, consulta la nostra Cookie Policy (se disponibile) o contattaci.
+            Questi cookie sono essenziali per il funzionamento del sito e non possono essere disabilitati. Includono, ad esempio, il cookie utilizzato per memorizzare il tuo consenso all'uso dei cookie stessi. Non raccolgono informazioni personali.
+          </p>
+          <h4>Cookie Analitici (se presenti)</h4>
+          <p>
+            Potremmo utilizzare cookie analitici di terze parti (es. Google Analytics) in forma anonima e aggregata per analizzare il traffico sul sito e capire come gli utenti interagiscono con i contenuti. Questi cookie non vengono utilizzati per identificarti personalmente.
+          </p>
+          <h4>Gestione dei Cookie</h4>
+          <p>
+            Puoi gestire le preferenze relative ai cookie direttamente dal tuo browser per impedire che terze parti possano installarli. Tramite le preferenze del browser è inoltre possibile eliminare i cookie installati in passato. Tieni presente che disabilitando tutti i cookie, il funzionamento di questo sito potrebbe essere compromesso.
           </p>
 
           <h2>I Tuoi Diritti in Materia di Privacy (GDPR)</h2>
@@ -74,21 +83,26 @@ export function PrivacyPolicyPage() {
             In base al Regolamento (UE) 2016/679 (GDPR), hai il diritto di:
           </p>
           <ul>
-            <li>Accedere ai tuoi dati personali.</li>
-            <li>Chiedere la rettifica o la cancellazione dei tuoi dati.</li>
-            <li>Opporti al trattamento o chiederne la limitazione.</li>
-            <li>Richiedere la portabilità dei dati.</li>
-            <li>Revocare il consenso in qualsiasi momento.</li>
-            <li>Proporre reclamo a un'autorità di controllo.</li>
+            <li><strong>Diritto di accesso:</strong> Chiedere quali dati personali stiamo trattando.</li>
+            <li><strong>Diritto di rettifica:</strong> Chiedere la correzione di dati inesatti.</li>
+            <li><strong>Diritto all'oblio:</strong> Chiedere la cancellazione dei tuoi dati, fatte salve le necessità di conservazione per obblighi di legge.</li>
+            <li><strong>Diritto di limitazione:</strong> Chiedere di limitare il trattamento in determinate circostanze.</li>
+            <li><strong>Diritto di opposizione:</strong> Opporti al trattamento per motivi legittimi.</li>
+            <li><strong>Diritto alla portabilità:</strong> Richiedere i tuoi dati in un formato strutturato e leggibile.</li>
+            <li><strong>Diritto di reclamo:</strong> Presentare un reclamo all'Autorità Garante per la protezione dei dati personali.</li>
           </ul>
           <p>
             Per esercitare i tuoi diritti, puoi contattarci all'indirizzo email fornito sopra.
           </p>
 
-          <h2>Conservazione dei Dati</h2>
+          <h2>Per Quanto Tempo Conserviamo i Dati (Periodo di Conservazione)</h2>
           <p>
-            Conserviamo i dati personali per il tempo strettamente necessario a fornire i servizi richiesti e per adempiere agli obblighi legali (ad esempio, per la garanzia di 12 mesi sui prodotti e per le normative fiscali), dopodiché verranno cancellati in modo sicuro.
+            Conserviamo i dati personali per il tempo strettamente necessario a raggiungere gli scopi per cui sono stati raccolti. In particolare:
           </p>
+          <ul>
+            <li>I dati relativi alla gestione degli ordini e alla fatturazione saranno conservati per <strong>10 anni</strong>, come richiesto dalla normativa fiscale italiana.</li>
+            <li>I dati raccolti per altre finalità (es. contatti) verranno cancellati una volta esaurito lo scopo per cui sono stati raccolti.</li>
+          </ul>
 
           <h2>Modifiche a Questa Informativa</h2>
           <p>

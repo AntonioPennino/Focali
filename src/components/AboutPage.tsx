@@ -1,6 +1,6 @@
 import { Button } from './ui/button';
 import { Heart, Award, Users } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from './ImageWithFallback';
 
 export function AboutPage() {
   return (
