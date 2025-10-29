@@ -93,10 +93,10 @@ export function TrackOrderPage() {
               {loading ? (
                 'Ricerca in corso...'
               ) : (
-                <>
+                <div className="flex items-center justify-center">
                   <Search size={20} className="mr-2" />
                   Cerca Ordine
-                </>
+                </div>
               )}
             </Button>
           </div>
