@@ -3,6 +3,14 @@ import type { Handler } from "@netlify/functions";
 const RESEND_API_KEY = process.env.RESEND_API_KEY!;
 
 export const handler: Handler = async (event) => {
+  // Solo metodo POST consentito
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ error: "Method not allowed" }),
+    };
+  }
+
   console.log("--- send-order-email function invoked ---");
 
   try {
@@ -12,7 +20,24 @@ export const handler: Handler = async (event) => {
 
     const { customerEmail, orderNumber, productName, amount } = JSON.parse(event.body);
 
-    console.log("Sending email to:", customerEmail);
+    // Validazione input
+    if (!customerEmail || !orderNumber || !productName || !amount) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Missing required fields" }),
+      };
+    }
+
+    // Validazione email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(customerEmail)) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Invalid email format" }),
+      };
+    }
+
+    console.log("Sending email to:", customerEmail.substring(0, 3) + "***");
 
     const emailHtml = `
       <!DOCTYPE html>
@@ -92,10 +117,13 @@ export const handler: Handler = async (event) => {
       return { statusCode: 500, body: JSON.stringify({ error: data }) };
     }
 
-    console.log("Email sent successfully:", data);
+    console.log("Email sent successfully");
 
     return {
       statusCode: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({ success: true, emailId: data.id }),
     };
   } catch (error) {

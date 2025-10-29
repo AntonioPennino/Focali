@@ -7,11 +7,20 @@ const supabaseKey = process.env.SUPABASE_ANON_KEY!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export const handler: Handler = async (event) => {
+  // Solo metodo GET consentito
+  if (event.httpMethod !== "GET") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ error: "Method not allowed" }),
+    };
+  }
+
   console.log("--- get-order function invoked ---");
 
   try {
     const { orderNumber, email } = event.queryStringParameters || {};
 
+    // Validazione input
     if (!orderNumber || !email) {
       return {
         statusCode: 400,
@@ -19,7 +28,25 @@ export const handler: Handler = async (event) => {
       };
     }
 
-    console.log("Searching order:", { orderNumber, email });
+    // Validazione formato email (basic)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Invalid email format" }),
+      };
+    }
+
+    // Validazione formato order number (FXXXX-XXXX-XXXX)
+    const orderRegex = /^F[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}$/;
+    if (!orderRegex.test(orderNumber)) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Invalid order number format" }),
+      };
+    }
+
+    console.log("Searching order for email (partial):", email.substring(0, 3) + "***");
 
     // Cerca l'ordine nel database
     const { data, error } = await supabase
@@ -30,17 +57,20 @@ export const handler: Handler = async (event) => {
       .single();
 
     if (error || !data) {
-      console.log("Order not found:", error);
+      console.log("Order not found");
       return {
         statusCode: 404,
         body: JSON.stringify({ error: "Ordine non trovato. Verifica numero ordine e email." }),
       };
     }
 
-    console.log("Order found:", data);
+    console.log("Order found successfully");
 
     return {
       statusCode: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         success: true,
         order: {

@@ -23,6 +23,14 @@ function generateOrderNumber(): string {
 }
 
 export const handler: Handler = async (event) => {
+  // Solo metodo POST consentito
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ error: "Method not allowed" }),
+    };
+  }
+
   console.log("--- save-order function invoked ---");
 
   try {
@@ -33,7 +41,32 @@ export const handler: Handler = async (event) => {
     const { paypalOrderId, customerEmail, customerName, productName, amount } =
       JSON.parse(event.body);
 
-    console.log("Saving order:", { paypalOrderId, customerEmail, productName, amount });
+    // Validazione input
+    if (!paypalOrderId || !customerEmail || !productName || !amount) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Missing required fields" }),
+      };
+    }
+
+    // Validazione email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(customerEmail)) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Invalid email format" }),
+      };
+    }
+
+    // Validazione amount (deve essere un numero positivo)
+    if (typeof amount !== "number" || amount <= 0) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Invalid amount" }),
+      };
+    }
+
+    console.log("Saving order for email:", customerEmail.substring(0, 3) + "***");
 
     // Genera numero d'ordine univoco
     let orderNumber = generateOrderNumber();
@@ -57,10 +90,10 @@ export const handler: Handler = async (event) => {
       {
         order_number: orderNumber,
         paypal_order_id: paypalOrderId,
-        customer_email: customerEmail,
+        customer_email: customerEmail.toLowerCase(), // Normalizza email
         customer_name: customerName || "Cliente",
         product_name: productName,
-        amount: amount,
+        amount: parseFloat(amount.toFixed(2)), // Assicura 2 decimali
         currency: "EUR",
         status: "completed",
       },
@@ -68,13 +101,16 @@ export const handler: Handler = async (event) => {
 
     if (error) {
       console.error("Supabase error:", error);
-      return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
+      return { statusCode: 500, body: JSON.stringify({ error: "Failed to save order" }) };
     }
 
-    console.log("Order saved successfully:", data);
+    console.log("Order saved successfully");
 
     return {
       statusCode: 200,
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         success: true,
         orderNumber: orderNumber,
