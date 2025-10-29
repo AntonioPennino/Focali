@@ -19,10 +19,10 @@ export function AboutPage() {
         
         <div className="relative z-10 text-center px-4 max-w-4xl">
           <h1 className="text-white mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
-            Chi Siamo
+            Chi Sono
           </h1>
           <p className="text-white/90" style={{ fontSize: '1.25rem' }}>
-            La storia di Focali e la nostra missione
+            La mia storia e la mia passione per il cinema analogico
           </p>
         </div>
       </section>

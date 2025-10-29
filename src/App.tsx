@@ -11,6 +11,9 @@ import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsAndConditionsPage } from './components/TermsAndConditionsPage';
 import { CookieBanner } from './components/CookieBanner';
 import { TrackOrderPage } from './components/TrackOrderPage';
+import { FAQPage } from './components/FAQPage';
+import { ShippingPage } from './components/ShippingPage';
+import { CatalogPage } from './components/CatalogPage';
 import { Toaster } from './components/ui/sonner';
 import { toast } from 'sonner';
 
@@ -102,12 +105,15 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<HomePage products={PRODUCTS} onAddToCart={handleAddToCart} />} />
+          <Route path="/catalogo" element={<CatalogPage products={PRODUCTS} onAddToCart={handleAddToCart} />} />
           <Route path="/product/:id" element={<ProductPage products={PRODUCTS} onAddToCart={handleAddToCart} />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/traccia-ordine" element={<TrackOrderPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/termini-e-condizioni" element={<TermsAndConditionsPage />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/spedizioni" element={<ShippingPage />} />
         </Routes>
       </main>
 

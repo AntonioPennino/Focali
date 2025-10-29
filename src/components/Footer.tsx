@@ -29,8 +29,8 @@ export function Footer() {
             <h4 className="mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Esplora</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/" className="text-white/70 hover:text-[#D97941] transition-colors">
-                  Cineprese
+                <a href="/catalogo" className="text-white/70 hover:text-[#D97941] transition-colors">
+                  Catalogo
                 </a>
               </li>
               <li>
@@ -61,17 +61,17 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/terms-and-conditions" className="text-white/70 hover:text-[#D97941] transition-colors">
+                <a href="/termini-e-condizioni" className="text-white/70 hover:text-[#D97941] transition-colors">
                   Termini e Condizioni
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-[#D97941] transition-colors">
+                <a href="/spedizioni" className="text-white/70 hover:text-[#D97941] transition-colors">
                   Spedizioni
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white/70 hover:text-[#D97941] transition-colors">
+                <a href="/faq" className="text-white/70 hover:text-[#D97941] transition-colors">
                   FAQ
                 </a>
               </li>

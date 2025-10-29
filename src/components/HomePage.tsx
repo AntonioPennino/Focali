@@ -45,7 +45,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
             crede che ogni fotogramma conti
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/">
+            <Link to="/catalogo">
               <Button
                 size="lg"
                 className="bg-[#D97941] hover:bg-[#A0522D] text-white px-8"
@@ -127,7 +127,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
           </div>
 
           <div className="text-center mt-12">
-            <Link to="/">
+            <Link to="/catalogo">
               <Button
                 variant="outline"
                 size="lg"
@@ -297,7 +297,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
             Scopri la mia collezione di cineprese vintage e trova quella perfetta 
             per dare vita alle tue storie
           </p>
-          <Link to="/">
+          <Link to="/catalogo">
             <Button
               size="lg"
               className="bg-[#D97941] hover:bg-[#A0522D] text-white px-8"
