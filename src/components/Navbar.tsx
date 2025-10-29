@@ -32,9 +32,12 @@ export function Navbar({ onCartClick, cartItemsCount }: NavbarProps) {
             <a href="/about" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
               Chi Siamo
             </a>
-            <a href="/contact" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
-              Contatti
-            </a>
+                      <Link to="/contatti" className="hover:text-[#A0522D] transition-colors">
+            Contatti
+          </Link>
+          <Link to="/traccia-ordine" className="hover:text-[#A0522D] transition-colors">
+            Traccia Ordine
+          </Link>
           </div>
 
           {/* Cart & Mobile Menu */}

@@ -71,20 +71,68 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
 
   const paypalOnApprove = async (data: any) => {
     try {
-      const response = await fetch("/.netlify/functions/capture-paypal-order", {
+      // 1. Cattura il pagamento su PayPal
+      const captureResponse = await fetch("/.netlify/functions/capture-paypal-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ orderID: data.orderID }),
       });
-      const orderDetails = await response.json();
-      if (orderDetails.status === 'COMPLETED') {
-        toast.success("Pagamento completato con successo!");
-        onSuccessfulCheckout();
-      } else {
+      const orderDetails = await captureResponse.json();
+      
+      if (orderDetails.status !== 'COMPLETED') {
         throw new Error(orderDetails.error || "Failed to capture PayPal order.");
       }
+
+      // 2. Estrai i dati del cliente da PayPal
+      const payerInfo = orderDetails.payer || {};
+      const customerEmail = payerInfo.email_address || "noemail@provided.com";
+      const customerName = payerInfo.name 
+        ? `${payerInfo.name.given_name || ''} ${payerInfo.name.surname || ''}`.trim()
+        : "Cliente";
+
+      // 3. Salva l'ordine nel database
+      const saveResponse = await fetch("/.netlify/functions/save-order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          paypalOrderId: data.orderID,
+          customerEmail: customerEmail,
+          customerName: customerName,
+          productName: items[0].name,
+          amount: total,
+        }),
+      });
+
+      const saveData = await saveResponse.json();
+
+      if (!saveResponse.ok) {
+        console.error("Failed to save order:", saveData);
+        // Non blocchiamo il flusso se il salvataggio fallisce
+      } else {
+        console.log("Order saved:", saveData);
+
+        // 4. Invia email di conferma
+        fetch("/.netlify/functions/send-order-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            customerEmail: customerEmail,
+            orderNumber: saveData.orderNumber,
+            productName: items[0].name,
+            amount: total,
+          }),
+        }).catch((err) => console.error("Failed to send email:", err));
+
+        toast.success(`Pagamento completato! Numero ordine: ${saveData.orderNumber}`);
+      }
+
+      onSuccessfulCheckout();
     } catch (error) {
       console.error(error);
       toast.error("Si è verificato un errore durante la conferma del pagamento. Riprova.");

@@ -104,8 +104,11 @@ export default function App() {
           <Route path="/product/:id" element={<ProductPage products={PRODUCTS} onAddToCart={handleAddToCart} />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/prodotto/:id" element={<ProductDetailPage onAddToCart={addToCart} />} />
+          <Route path="/traccia-ordine" element={<TrackOrderPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+          <Route path="/termini-e-condizioni" element={<TermsPage />} />
+          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
         </Routes>
       </main>
 
