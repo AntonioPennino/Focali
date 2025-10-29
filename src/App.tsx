@@ -10,6 +10,7 @@ import { ContactPage } from './components/ContactPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsAndConditionsPage } from './components/TermsAndConditionsPage';
 import { CookieBanner } from './components/CookieBanner';
+import { TrackOrderPage } from './components/TrackOrderPage';
 import { Toaster } from './components/ui/sonner';
 import { toast } from 'sonner';
 
@@ -104,11 +105,9 @@ export default function App() {
           <Route path="/product/:id" element={<ProductPage products={PRODUCTS} onAddToCart={handleAddToCart} />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-                    <Route path="/prodotto/:id" element={<ProductDetailPage onAddToCart={addToCart} />} />
           <Route path="/traccia-ordine" element={<TrackOrderPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/termini-e-condizioni" element={<TermsPage />} />
-          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+          <Route path="/termini-e-condizioni" element={<TermsAndConditionsPage />} />
         </Routes>
       </main>
 
