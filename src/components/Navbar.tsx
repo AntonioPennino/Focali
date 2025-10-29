@@ -1,5 +1,6 @@
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 
 interface NavbarProps {
@@ -26,18 +27,18 @@ export function Navbar({ onCartClick, cartItemsCount }: NavbarProps) {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="/" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
+            <Link to="/" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
               Cineprese
-            </a>
-            <a href="/about" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
+            </Link>
+            <Link to="/about" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
               Chi Siamo
-            </a>
-                      <Link to="/contatti" className="hover:text-[#A0522D] transition-colors">
-            Contatti
-          </Link>
-          <Link to="/traccia-ordine" className="hover:text-[#A0522D] transition-colors">
-            Traccia Ordine
-          </Link>
+            </Link>
+            <Link to="/contact" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
+              Contatti
+            </Link>
+            <Link to="/traccia-ordine" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
+              Traccia Ordine
+            </Link>
           </div>
 
           {/* Cart & Mobile Menu */}
@@ -70,27 +71,34 @@ export function Navbar({ onCartClick, cartItemsCount }: NavbarProps) {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-[#1A1A1A]/10">
             <div className="flex flex-col gap-4">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Cineprese
-              </a>
-              <a
-                href="/about"
+              </Link>
+              <Link
+                to="/about"
                 className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Chi Siamo
-              </a>
-              <a
-                href="/contact"
+              </Link>
+              <Link
+                to="/contact"
                 className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contatti
-              </a>
+              </Link>
+              <Link
+                to="/traccia-ordine"
+                className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Traccia Ordine
+              </Link>
             </div>
           </div>
         )}
