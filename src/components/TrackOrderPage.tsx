@@ -85,10 +85,10 @@ export function TrackOrderPage() {
               />
             </div>
 
-            <Button
+            <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#A0522D] hover:bg-[#8B4513] text-white py-6 text-lg"
+              className="w-full bg-[#A0522D] hover:bg-[#8B4513] text-white py-6 text-lg rounded-md font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 'Ricerca in corso...'
@@ -98,7 +98,7 @@ export function TrackOrderPage() {
                   Cerca Ordine
                 </div>
               )}
-            </Button>
+            </button>
           </div>
         </form>
 
