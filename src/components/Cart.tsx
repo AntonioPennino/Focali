@@ -29,7 +29,6 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
   if (!isOpen) return null;
 
   const paypalCreateOrder = async () => {
-    setIsProcessing(true);
     console.log("🔵 [Frontend] Inizio creazione ordine PayPal");
     try {
       // Prepariamo un oggetto con i dati corretti per il backend
@@ -53,7 +52,7 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
       console.log("🔵 [Frontend] Risposta completa dal backend:", order);
       
       if (order.id) {
-        console.log("✅ [Frontend] ID ordine ricevuto:", order.id);
+        console.log("✅ [Frontend] ID ordine ricevuto e restituito:", order.id);
         return order.id;
       } else {
         // Log dell'errore specifico da PayPal se disponibile
@@ -61,14 +60,12 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
         const errorDetails = order.details ? JSON.stringify(order.details) : "Nessun dettaglio disponibile.";
         console.error("Errore dalla funzione Netlify:", order.message, errorDetails);
         toast.error(`Errore da PayPal: ${order.message || "Impossibile creare l'ordine."}`);
-        setIsProcessing(false);
-        return null;
+        throw new Error("No order ID received");
       }
     } catch (error) {
       console.error("❌ [Frontend] Errore catturato in paypalCreateOrder:", error);
       toast.error("Si è verificato un errore di rete. Riprova.");
-      setIsProcessing(false);
-      return null;
+      throw error;
     }
   };
 
