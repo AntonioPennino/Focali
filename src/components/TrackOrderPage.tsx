@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Search, Package, CheckCircle } from 'lucide-react';
-import { Button } from './ui/button';
 import { toast } from 'sonner';
 
 export function TrackOrderPage() {
@@ -88,7 +87,8 @@ export function TrackOrderPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#A0522D] hover:bg-[#8B4513] text-white py-6 text-lg rounded-md font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full hover:bg-[#8B4513] py-6 text-lg rounded-md font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              style={{ backgroundColor: '#A0522D', color: '#ffffff' }}
             >
               {loading ? (
                 'Ricerca in corso...'
