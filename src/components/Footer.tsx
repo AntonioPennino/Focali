@@ -15,9 +15,12 @@ export function Footer() {
                 Focali
               </span>
             </div>
-            <p className="text-white/70 max-w-md">
-              Riportiamo in vita le cineprese che hanno fatto la storia del cinema. 
-              Ogni pezzo è testato, certificato e pronto per le tue riprese.
+            <p className="text-white/70 max-w-md mb-3">
+              Ridò vita alle cineprese che hanno fatto la storia del cinema. 
+              Ogni pezzo è testato personalmente da me, un filmmaker che come te crede nell'analogico.
+            </p>
+            <p className="text-white/50 text-sm italic">
+              — Antonio, video editor e appassionato di cinema da Benevento
             </p>
           </div>
 

@@ -31,20 +31,25 @@ export function AboutPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', color: '#1A1A1A' }}>
-              La Nostra Storia
+              La Mia Storia
             </h2>
             <p className="text-[#1A1A1A]/80">
-              Focali nasce nel 2023 dalla passione di un gruppo di filmmaker e collezionisti 
-              che hanno trascorso anni a cercare, restaurare e utilizzare cineprese analogiche. 
-              Ci siamo resi conto che molte di queste meraviglie tecnologiche giacevano 
-              dimenticate in soffitte e mercatini, quando meritavano invece di tornare a fare 
-              ciò per cui erano state create: catturare storie.
+              Sono Antonio, ho 22 anni e vengo da Benevento. Da quando ho iniziato a montare video 
+              a 14 anni, ho capito che il cinema è il linguaggio con cui voglio raccontare il mondo. 
+              Ogni storia merita di essere raccontata con il giusto ritmo, la luce giusta e un'idea chiara.
             </p>
             <p className="text-[#1A1A1A]/80">
-              Il nome "Focali" deriva dal punto focale, quell'elemento cruciale in ogni 
-              obiettivo che determina la chiarezza dell'immagine. Per noi rappresenta anche 
-              il nostro obiettivo: essere il punto di riferimento per chi cerca autenticità, 
-              qualità e storytelling nel mondo delle cineprese vintage.
+              Lavoro come video editor, regista e sceneggiatore. DaVinci Resolve è il mio studio, 
+              ma è stato il Super 8 a farmi capire davvero cosa significa fare cinema: ogni fotogramma 
+              conta, nulla è per caso. Quando ho girato il mio primo cortometraggio con una cinepresa 
+              analogica, ho sentito quella connessione fisica con l'immagine che il digitale non può darti.
+            </p>
+            <p className="text-[#1A1A1A]/80">
+              Focali nasce da questa passione: ridare vita a cineprese che hanno fatto la storia, 
+              testarle, raccontarle e consegnarle nelle mani di chi, come me, crede che l'analogico 
+              non sia nostalgia, ma autenticità. Il nome viene dal punto focale di un obiettivo: 
+              quel punto preciso dove tutto diventa nitido. Voglio che Focali sia questo per te: 
+              chiarezza, fiducia e passione condivisa.
             </p>
           </div>
         </div>
@@ -55,11 +60,11 @@ export function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
-              La Nostra Missione
+              La Mia Missione
             </h2>
             <p className="text-[#1A1A1A]/70 max-w-3xl mx-auto" style={{ fontSize: '1.125rem' }}>
-              "Riportare in vita le cineprese che hanno fatto la storia, connettendo 
-              il passato del cinema con i filmmaker di oggi"
+              "Ogni cinepresa vintage ha una storia. Io la testo, la documento e te la consegno 
+              pronta per scriverne un'altra: la tua."
             </p>
           </div>
 
@@ -68,10 +73,10 @@ export function AboutPage() {
               <div className="w-16 h-16 bg-[#D97941] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="text-white" size={32} />
               </div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Passione</h3>
+              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Passione Vera</h3>
               <p className="text-[#1A1A1A]/70">
-                Ogni cinepresa che passa per le nostre mani viene trattata con il rispetto 
-                che merita, come un pezzo d'arte che è.
+                Non sono un negozio: sono un filmmaker che ama l'analogico. Ogni cinepresa 
+                che vendo l'ho testata come se dovessi usarla io stesso.
               </p>
             </div>
 
@@ -79,10 +84,10 @@ export function AboutPage() {
               <div className="w-16 h-16 bg-[#D97941] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="text-white" size={32} />
               </div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Qualità</h3>
+              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Trasparenza Totale</h3>
               <p className="text-[#1A1A1A]/70">
-                Test rigorosi, documentazione completa e garanzia estesa: la qualità 
-                è il nostro standard, non un'opzione.
+                Video test completo, foto dettagliate, descrizione onesta. Niente filtri, 
+                niente bugie. Vedi esattamente quello che riceverai.
               </p>
             </div>
 
@@ -90,10 +95,10 @@ export function AboutPage() {
               <div className="w-16 h-16 bg-[#D97941] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="text-white" size={32} />
               </div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Community</h3>
+              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Supporto Diretto</h3>
               <p className="text-[#1A1A1A]/70">
-                Non vendiamo solo cineprese: creiamo una comunità di appassionati che 
-                condividono la nostra visione.
+                Scrivimi per qualsiasi dubbio. Parlo con te, non con un chatbot. 
+                Condivido la tua passione e voglio che tu faccia l'acquisto giusto.
               </p>
             </div>
           </div>
@@ -105,10 +110,11 @@ export function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
-              Dietro le Quinte
+              Come Lavoro
             </h2>
             <p className="text-[#1A1A1A]/70 max-w-2xl mx-auto">
-              Un'occhiata al nostro laboratorio dove le cineprese tornano in vita
+              Ogni cinepresa passa attraverso il mio studio a Benevento, 
+              dove la testo con la stessa cura che uso per i miei progetti
             </p>
           </div>
 
@@ -135,37 +141,37 @@ export function AboutPage() {
       <section className="py-20 bg-[#1A1A1A] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="mb-12 text-center" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
-            I Nostri Valori
+            In Cosa Credo
           </h2>
           
           <div className="space-y-8">
             <div>
               <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
-                Autenticità
+                L'Analogico è Libertà
               </h3>
               <p className="text-white/80">
-                Ogni cinepresa ha una storia vera. Non inventiamo leggende: documentiamo 
-                fatti, origini e caratteristiche reali di ogni pezzo.
+                Con una cinepresa analogica non devi preoccuparti di batterie, schede SD o update. 
+                Carichi, inquadri, riprendi. Il cinema nella sua forma più pura.
               </p>
             </div>
 
             <div>
               <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
-                Trasparenza
+                Il Test è Tutto
               </h3>
               <p className="text-white/80">
-                Video test completi, fotografie dettagliate e descrizioni oneste. 
-                Vogliamo che tu sappia esattamente cosa stai acquistando.
+                So quanto è frustrante ricevere attrezzatura "funzionante" che poi non funziona. 
+                Per questo testo tutto personalmente e ti mostro il video. Niente brutte sorprese.
               </p>
             </div>
 
             <div>
               <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
-                Sostenibilità
+                La Storia ha Valore
               </h3>
               <p className="text-white/80">
-                Dare nuova vita a strumenti esistenti invece di produrre nuovo è il nostro 
-                contributo per un futuro più sostenibile.
+                Queste cineprese hanno ripreso matrimoni, documentari, cortometraggi, momenti familiari. 
+                Ridare loro vita significa rispettare la storia del cinema e continuarla.
               </p>
             </div>
           </div>
@@ -176,16 +182,17 @@ export function AboutPage() {
       <section className="py-20 bg-[#E8DCC4]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="mb-6" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
-            Unisciti alla Nostra Comunità
+            Facciamo Due Chiacchiere
           </h2>
           <p className="text-[#1A1A1A]/80 mb-8 max-w-2xl mx-auto">
-            Scopri le nostre cineprese e diventa parte di una storia più grande
+            Hai domande su una cinepresa? Vuoi consigli per il tuo progetto? 
+            Scrivimi. Rispondo sempre personalmente.
           </p>
           <Button
             size="lg"
             className="bg-[#D97941] hover:bg-[#A0522D] text-white px-8"
           >
-            Scopri le Cineprese
+            Contattami
           </Button>
         </div>
       </section>

@@ -37,10 +37,11 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
         
         <div className="relative z-10 text-center px-4 max-w-4xl">
           <h1 className="text-white mb-6" style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: '1.2' }}>
-            Ogni Cinepresa Racconta una Storia
+            Il Cinema Merita Strumenti Veri
           </h1>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto" style={{ fontSize: '1.25rem' }}>
-            Cineprese vintage testate, certificate e pronte per le tue riprese
+            Cineprese analogiche testate personalmente da un filmmaker che, come te, 
+            crede che ogni fotogramma conti
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -68,9 +69,9 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
               <div className="w-16 h-16 bg-[#D97941] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Video className="text-white" size={32} />
               </div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Test Completo</h3>
+              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Video Test Reale</h3>
               <p className="text-[#1A1A1A]/70">
-                Video test funzionale per ogni pezzo, così sai esattamente cosa acquisti
+                Ogni cinepresa filmata in azione. Vedi come funziona prima di acquistare
               </p>
             </div>
 
@@ -78,9 +79,9 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
               <div className="w-16 h-16 bg-[#D97941] rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle2 className="text-white" size={32} />
               </div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Storytelling Autentico</h3>
+              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Storia Documentata</h3>
               <p className="text-[#1A1A1A]/70">
-                Storia e certificato per ogni cinepresa: conosci il passato del tuo pezzo
+                Ogni pezzo ha un passato: te lo racconto con foto, certificato e trasparenza totale
               </p>
             </div>
 
@@ -90,7 +91,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
               </div>
               <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Garanzia 12 Mesi</h3>
               <p className="text-[#1A1A1A]/70">
-                Acquista con sicurezza: ogni cinepresa è garantita per un anno intero
+                Acquista sicuro: ti garantisco personalmente ogni cinepresa per un anno
               </p>
             </div>
           </div>
@@ -145,24 +146,23 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
             </div>
             <div>
               <h2 className="mb-6" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
-                Passione per l'Analogico
+                Non Sono un Rivenditore, Sono un Filmmaker
               </h2>
               <p className="mb-4 text-white/80">
-                Focali nasce dall'amore per il cinema analogico e dalla convinzione che 
-                ogni cinepresa meriti una seconda vita. Non vendiamo semplicemente attrezzature 
-                vintage: curiamo e riportiamo in vita strumenti che hanno fatto la storia 
-                del cinema.
+                Mi chiamo Antonio, ho 22 anni e da quando ne avevo 14 monto video e racconto storie. 
+                Ho iniziato con il digitale, ma quando ho girato il mio primo cortometraggio in Super 8 
+                ho capito cosa significa davvero fare cinema: ogni fotogramma è prezioso, niente può essere sprecato.
               </p>
               <p className="mb-6 text-white/80">
-                Ogni pezzo passa attraverso un rigoroso processo di test e certificazione. 
-                Documentiamo la storia di ogni cinepresa e la prepariamo con cura per il 
-                suo prossimo capitolo: nelle tue mani.
+                Focali è il mio progetto personale: testo cineprese vintage con la stessa cura che uso 
+                nei miei lavori, le documento e le passo nelle tue mani. Non ti vendo solo un oggetto: 
+                ti do uno strumento che ha fatto la storia e che ora può scrivere la tua.
               </p>
               <Button
                 variant="outline"
                 className="border-white text-white hover:bg-white/10"
               >
-                Leggi la Nostra Storia
+                Leggi la Mia Storia
               </Button>
             </div>
           </div>

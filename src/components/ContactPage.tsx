@@ -25,11 +25,11 @@ export function ContactPage() {
       <section className="bg-[#E8DCC4]/30 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
-            Parliamone
+            Facciamo Due Chiacchiere
           </h1>
           <p className="text-[#1A1A1A]/70" style={{ fontSize: '1.125rem' }}>
-            Hai domande su una cinepresa? Vuoi saperne di più sul nostro processo? 
-            Siamo qui per aiutarti.
+            Hai dubbi su una cinepresa? Vuoi consigli per il tuo progetto? 
+            O semplicemente vuoi parlare di cinema analogico? Scrivimi, rispondo sempre personalmente.
           </p>
         </div>
       </section>
@@ -97,7 +97,7 @@ export function ContactPage() {
             {/* Contact Info */}
             <div>
               <h2 className="mb-6" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem' }}>
-                Altri Modi per Contattarci
+                Dove Trovarmi
               </h2>
 
               <div className="space-y-6">
@@ -109,7 +109,7 @@ export function ContactPage() {
                   <div>
                     <h3 className="mb-1">Email</h3>
                     <p className="text-[#1A1A1A]/70 mb-2">
-                      Per domande generali o supporto
+                      Il modo più veloce per contattarmi
                     </p>
                     <a
                       href="mailto:ciao@focali.it"
@@ -128,7 +128,7 @@ export function ContactPage() {
                   <div>
                     <h3 className="mb-1">Instagram</h3>
                     <p className="text-[#1A1A1A]/70 mb-2">
-                      Seguici per aggiornamenti e dietro le quinte
+                      Seguimi per vedere test, dietro le quinte e cineprese in arrivo
                     </p>
                     <a
                       href="https://instagram.com/focali"
@@ -147,9 +147,9 @@ export function ContactPage() {
                     <Send className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className="mb-1">Community Telegram</h3>
+                    <h3 className="mb-1">Telegram</h3>
                     <p className="text-[#1A1A1A]/70 mb-2">
-                      Unisciti alla nostra community di appassionati
+                      Scrivimi per domande rapide o per parlare di progetti
                     </p>
                     <a
                       href="https://t.me/focali"
@@ -172,19 +172,19 @@ export function ContactPage() {
                   <div>
                     <p className="text-[#D97941] mb-1">Quanto tempo ci vuole per la spedizione?</p>
                     <p className="text-white/80">
-                      Solitamente 2-3 giorni lavorativi in Italia con corriere tracciato.
+                      2-3 giorni lavorativi in Italia con corriere tracciato. Preparo tutto personalmente.
                     </p>
                   </div>
                   <div>
                     <p className="text-[#D97941] mb-1">Posso restituire una cinepresa?</p>
                     <p className="text-white/80">
-                      Sì, hai 14 giorni per il reso se la cinepresa non soddisfa le tue aspettative.
+                      Certo! Hai 14 giorni per provarla. Se non ti soddisfa, te la riprendo senza problemi.
                     </p>
                   </div>
                   <div>
-                    <p className="text-[#D97941] mb-1">Vendete anche pellicole?</p>
+                    <p className="text-[#D97941] mb-1">Offri consulenze per progetti?</p>
                     <p className="text-white/80">
-                      Al momento ci concentriamo solo sulle cineprese, ma stiamo valutando di espandere l'offerta.
+                      Assolutamente. Sono un video editor e filmmaker: se hai un progetto e vuoi consigli, scrivimi.
                     </p>
                   </div>
                 </div>
@@ -198,12 +198,12 @@ export function ContactPage() {
       <section className="py-16 bg-[#E8DCC4]/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
-            Orari di Risposta
+            Quando Rispondo
           </h3>
           <p className="text-[#1A1A1A]/70">
-            Rispondiamo a tutte le email entro 24 ore nei giorni lavorativi<br />
-            Lunedì - Venerdì: 9:00 - 18:00<br />
-            Sabato - Domenica: Chiuso
+            Rispondo a tutte le email entro 24 ore, spesso molto prima<br />
+            Lavoro principalmente nei giorni lavorativi, ma se hai urgenza scrivimi comunque.<br />
+            Sono una persona sola, non un call center: ti darò sempre risposte dirette e oneste.
           </p>
         </div>
       </section>
