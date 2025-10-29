@@ -35,17 +35,17 @@ export function Footer() {
               </li>
               <li>
                 <a href="/about" className="text-white/70 hover:text-[#D97941] transition-colors">
-                  Chi Siamo
-                </a>
-              </li>
-              <li>
-                <a href="/testing" className="text-white/70 hover:text-[#D97941] transition-colors">
-                  Come Testiamo
+                  Chi Sono
                 </a>
               </li>
               <li>
                 <a href="/contact" className="text-white/70 hover:text-[#D97941] transition-colors">
                   Contatti
+                </a>
+              </li>
+              <li>
+                <a href="/traccia-ordine" className="text-white/70 hover:text-[#D97941] transition-colors">
+                  Traccia Ordine
                 </a>
               </li>
             </ul>

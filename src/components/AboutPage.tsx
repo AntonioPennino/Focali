@@ -1,6 +1,7 @@
 import { Button } from './ui/button';
 import { Heart, Award, Users } from 'lucide-react';
 import { ImageWithFallback } from './ImageWithFallback';
+import { Link } from 'react-router-dom';
 
 export function AboutPage() {
   return (
@@ -113,8 +114,8 @@ export function AboutPage() {
               Come Lavoro
             </h2>
             <p className="text-[#1A1A1A]/70 max-w-2xl mx-auto">
-              Ogni cinepresa passa attraverso il mio studio a Benevento, 
-              dove la testo con la stessa cura che uso per i miei progetti
+              Non ho uno studio professionale: sono un appassionato che le trova, le sistema come posso, 
+              le testo e le rivende a chi le apprezzerà. Semplice e onesto.
             </p>
           </div>
 
@@ -188,12 +189,14 @@ export function AboutPage() {
             Hai domande su una cinepresa? Vuoi consigli per il tuo progetto? 
             Scrivimi. Rispondo sempre personalmente.
           </p>
-          <Button
-            size="lg"
-            className="bg-[#D97941] hover:bg-[#A0522D] text-white px-8"
-          >
-            Contattami
-          </Button>
+          <Link to="/contact">
+            <Button
+              size="lg"
+              className="bg-[#D97941] hover:bg-[#A0522D] text-white px-8"
+            >
+              Contattami
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

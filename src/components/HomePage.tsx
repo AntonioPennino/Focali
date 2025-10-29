@@ -3,6 +3,7 @@ import { ProductCard } from './ProductCard';
 import { Badge } from './ui/badge';
 import { CheckCircle2, Shield, Video, Star } from 'lucide-react';
 import { ImageWithFallback } from './ImageWithFallback';
+import { Link } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -44,19 +45,23 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
             crede che ogni fotogramma conti
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-[#D97941] hover:bg-[#A0522D] text-white px-8"
-            >
-              Scopri le Cineprese
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white/10 px-8"
-            >
-              Come Funziona
-            </Button>
+            <Link to="/">
+              <Button
+                size="lg"
+                className="bg-[#D97941] hover:bg-[#A0522D] text-white px-8"
+              >
+                Scopri le Cineprese
+              </Button>
+            </Link>
+            <Link to="/about">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white/10 px-8"
+              >
+                La Mia Storia
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -122,13 +127,15 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
           </div>
 
           <div className="text-center mt-12">
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#E8DCC4]/30"
-            >
-              Esplora Tutte le Cineprese
-            </Button>
+            <Link to="/">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#E8DCC4]/30"
+              >
+                Esplora Tutte le Cineprese
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -158,12 +165,14 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
                 nei miei lavori, le documento e le passo nelle tue mani. Non ti vendo solo un oggetto: 
                 ti do uno strumento che ha fatto la storia e che ora può scrivere la tua.
               </p>
-              <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white/10"
-              >
-                Leggi la Mia Storia
-              </Button>
+              <Link to="/about">
+                <Button
+                  variant="outline"
+                  className="border-white text-white hover:bg-white/10"
+                >
+                  Leggi la Mia Storia
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -285,15 +294,17 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
             Inizia il Tuo Viaggio nell'Analogico
           </h2>
           <p className="text-[#1A1A1A]/80 mb-8 max-w-2xl mx-auto">
-            Scopri la nostra collezione di cineprese vintage e trova quella perfetta 
+            Scopri la mia collezione di cineprese vintage e trova quella perfetta 
             per dare vita alle tue storie
           </p>
-          <Button
-            size="lg"
-            className="bg-[#D97941] hover:bg-[#A0522D] text-white px-8"
-          >
-            Esplora le Cineprese
-          </Button>
+          <Link to="/">
+            <Button
+              size="lg"
+              className="bg-[#D97941] hover:bg-[#A0522D] text-white px-8"
+            >
+              Esplora le Cineprese
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
