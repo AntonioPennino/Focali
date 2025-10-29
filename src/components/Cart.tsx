@@ -31,22 +31,34 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
   const paypalCreateOrder = async () => {
     setIsProcessing(true);
     try {
+      // Prepariamo un oggetto con i dati corretti per il backend
+      const orderPayload = {
+        name: items.length > 0 ? items[0].name : "Acquisto", // Usa il nome del primo articolo
+        price: total, // Usa il totale già calcolato
+      };
+
       const response = await fetch("/.netlify/functions/create-paypal-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ cart: items }),
+        // Invia l'oggetto corretto
+        body: JSON.stringify({ cart: orderPayload }),
       });
       const order = await response.json();
       if (order.id) {
         return order.id;
       } else {
-        throw new Error(order.error || "Failed to create PayPal order.");
+        // Log dell'errore specifico da PayPal se disponibile
+        const errorDetails = order.details ? JSON.stringify(order.details) : "Nessun dettaglio disponibile.";
+        console.error("Errore dalla funzione Netlify:", order.message, errorDetails);
+        toast.error(`Errore da PayPal: ${order.message || "Impossibile creare l'ordine."}`);
+        setIsProcessing(false);
+        return null;
       }
     } catch (error) {
-      console.error(error);
-      toast.error("Si è verificato un errore durante la creazione dell'ordine. Riprova.");
+      console.error("Errore catturato in paypalCreateOrder:", error);
+      toast.error("Si è verificato un errore di rete. Riprova.");
       setIsProcessing(false);
       return null;
     }
@@ -175,7 +187,7 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
                   <p>Processando il pagamento...</p>
                 </div>
               ) : (
-                <PayPalScriptProvider options={{ "client-id": import.meta.env.VITE_PAYPAL_CLIENT_ID || "test", currency: "EUR", intent: "capture" }}>
+                <PayPalScriptProvider options={{ clientId: import.meta.env.VITE_PAYPAL_CLIENT_ID || "test", currency: "EUR", intent: "capture" }}>
                     <PayPalButtons 
                         style={{ layout: "vertical", color: 'blue', shape: 'rect', label: 'pay' }}
                         createOrder={paypalCreateOrder}
