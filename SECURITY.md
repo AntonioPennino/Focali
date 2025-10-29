@@ -157,7 +157,7 @@ Prima di accettare pagamenti reali:
 ## 📞 Contatti Sicurezza
 
 Se trovi una vulnerabilità:
-- Email: ciao@focali.it
+- Email: antonio.pennino.mail@gmail.com
 - Descrivi il problema in dettaglio
 - Non pubblicare vulnerabilità pubblicamente prima di avermi contattato
 
