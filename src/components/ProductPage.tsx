@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './ImageWithFallback';
 import { CheckCircle2, Shield, Video } from 'lucide-react';
+import { useState } from 'react';
 
 interface Product {
   id: number;
@@ -21,6 +22,15 @@ interface ProductPageProps {
 export function ProductPage({ products, onAddToCart }: ProductPageProps) {
   const { id } = useParams<{ id: string }>();
   const product = products.find((p) => p.id === parseInt(id || ''));
+  
+  // Immagini della Sankyo
+  const sankyoImages = [
+    '/src/imgs/IMG_20251031_082526_969.jpg',
+    '/src/imgs/IMG_20251031_082527_277.jpg',
+    '/src/imgs/IMG_20251031_082527_412.jpg'
+  ];
+  
+  const [selectedImage, setSelectedImage] = useState(0);
 
   if (!product) {
     return (
@@ -35,13 +45,38 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
       <main className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Product Image */}
+            {/* Product Images Gallery */}
             <div>
-              <ImageWithFallback
-                src={product.image}
-                alt={product.name}
-                className="w-full h-auto object-cover rounded-lg shadow-lg"
-              />
+              {/* Main Image */}
+              <div className="mb-4">
+                <ImageWithFallback
+                  src={sankyoImages[selectedImage]}
+                  alt={`${product.name} - Foto ${selectedImage + 1}`}
+                  className="w-full h-auto object-cover rounded-lg shadow-lg"
+                />
+              </div>
+              
+              {/* Thumbnails */}
+              <div className="grid grid-cols-3 gap-4">
+                {sankyoImages.map((img, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedImage(index)}
+                    aria-label={`Visualizza foto ${index + 1}`}
+                    className={`relative overflow-hidden rounded-lg border-2 transition-all ${
+                      selectedImage === index 
+                        ? 'border-[#A0522D] shadow-md' 
+                        : 'border-gray-200 hover:border-[#D97941]'
+                    }`}
+                  >
+                    <ImageWithFallback
+                      src={img}
+                      alt={`${product.name} - Miniatura ${index + 1}`}
+                      className="w-full h-24 object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Product Details */}
@@ -53,10 +88,18 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
               
               <div className="prose prose-lg text-gray-700 mb-8">
                 <p>
-                  Un pezzo di storia del cinema, questa <strong>{product.brand}</strong> del {product.year} è pronta per una nuova vita. 
-                  Testata e certificata, offre un'esperienza di ripresa autentica e ricca di fascino.
+                  Questa <strong>Sankyo Sound XL 40S</strong> del 1978 è una delle migliori cineprese Super 8 
+                  mai prodotte. Dotata di registrazione audio sincronizzato, obiettivo zoom macro e controlli manuali, 
+                  è perfetta sia per progetti artistici che per chi vuole vivere l'esperienza autentica del cinema analogico.
                 </p>
-                {/* Add more detailed description here */}
+                <p className="mt-4">
+                  <strong>Condizioni:</strong> Testata e funzionante. Meccanica precisa, ottica pulita, 
+                  esposimetro calibrato. Include custodia originale.
+                </p>
+                <p className="mt-4">
+                  <strong>Cosa include:</strong> Cinepresa, custodia originale, tracolla, manuale (copia), 
+                  certificato di autenticità Focali.
+                </p>
               </div>
 
               <Button

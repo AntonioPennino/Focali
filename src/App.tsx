@@ -39,7 +39,7 @@ const PRODUCTS: Product[] = [
     brand: 'Sankyo',
     year: '1978',
     price: 150,
-    image: 'https://images.unsplash.com/photo-1590978486398-38d279707539?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYW5reW8lMjBzb3VuZCUyMHhsJTIwNDBzfGVufDF8fHx8MTcyMjE3NTI4MHww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: '/src/imgs/IMG_20251031_082526_969.jpg',
     hasVideoTest: true
   }
 ];
