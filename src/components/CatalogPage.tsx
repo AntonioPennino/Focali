@@ -1,4 +1,5 @@
 import { ProductCard } from './ProductCard';
+import { SEO } from './SEO';
 
 interface Product {
   id: number;
@@ -18,6 +19,12 @@ interface CatalogPageProps {
 export function CatalogPage({ products, onAddToCart }: CatalogPageProps) {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Catalogo Cineprese - Focali"
+        description="Esplora il catalogo completo di cineprese analogiche vintage. Ogni pezzo è testato, garantito e pronto per essere spedito."
+        name="Focali"
+        type="website"
+      />
       {/* Hero */}
       <section className="bg-[#E8DCC4]/30 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -4,6 +4,7 @@ import { Badge } from './ui/badge';
 import { CheckCircle2, Shield, Video, Star } from 'lucide-react';
 import { ImageWithFallback } from './ImageWithFallback';
 import { Link } from 'react-router-dom';
+import { SEO } from './SEO';
 
 interface Product {
   id: number;
@@ -25,6 +26,12 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Focali - Cineprese Analogiche Vintage con Garanzia e Video Test"
+        description="Scopri la nostra collezione di cineprese analogiche vintage, testate e garantite 12 mesi. Ogni cinepresa ha un video test per mostrarti esattamente come funziona."
+        name="Focali"
+        type="website"
+      />
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">

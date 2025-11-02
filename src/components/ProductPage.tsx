@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import { ImageWithFallback } from './ImageWithFallback';
 import { CheckCircle2, Shield, Video } from 'lucide-react';
 import { useState } from 'react';
+import { SEO } from './SEO';
 
 // Import images so Vite knows to bundle them
 // Use public static paths (served from `public/imgs/`) so production serves them as /imgs/... 
@@ -37,6 +38,10 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
   if (!product) {
     return (
       <div className="flex items-center justify-center h-screen">
+        <SEO 
+          title="Prodotto Non Trovato - Focali"
+          description="Il prodotto che stai cercando non è disponibile o non esiste."
+        />
         <h2 className="text-2xl">Prodotto non trovato</h2>
       </div>
     );
@@ -44,6 +49,12 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO 
+        title={`${product.name} - Focali`}
+        description={`Acquista la ${product.name}, una cinepresa ${product.brand} del ${product.year}. Testata, garantita e pronta per le tue storie.`}
+        name="Focali"
+        type="product"
+      />
       <main className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

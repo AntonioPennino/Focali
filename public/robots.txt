@@ -1,0 +1,11 @@
+# Regole per tutti i crawler (user-agent)
+User-agent: *
+
+# Consenti l'accesso a tutte le parti del sito
+Allow: /
+
+# Non consentire l'accesso a percorsi specifici (se necessario)
+# Esempio: Disallow: /private/
+
+# Indica la posizione della sitemap (la creeremo nel prossimo passaggio)
+Sitemap: https://focalishop.netlify.app/sitemap.xml

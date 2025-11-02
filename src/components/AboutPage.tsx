@@ -2,10 +2,17 @@ import { Button } from './ui/button';
 import { Heart, Award, Users } from 'lucide-react';
 import { ImageWithFallback } from './ImageWithFallback';
 import { Link } from 'react-router-dom';
+import { SEO } from './SEO';
 
 export function AboutPage() {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Chi Sono - La Storia di Focali"
+        description="Scopri la storia di Focali e la passione per il cinema analogico che mi ha spinto a creare questo progetto. Non sono un rivenditore, sono un filmmaker."
+        name="Focali"
+        type="website"
+      />
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
