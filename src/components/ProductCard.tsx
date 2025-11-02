@@ -58,13 +58,13 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
           <p className="text-[#A0522D] text-sm mb-1">
             {product.brand} · {product.year}
           </p>
-          <h3 className="text-[#1A1A1A] mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
+          <h3 className="text-[#1A1A1A] mb-2 playfair-heading">
             {product.name}
           </h3>
         </div>
 
         <div className="flex items-center justify-between">
-          <div className="text-[#1A1A1A]" style={{ fontSize: '1.5rem', fontFamily: 'Playfair Display, serif' }}>
+          <div className="text-[#1A1A1A] playfair-large">
             €{product.price}
           </div>
           <Link to={`/product/${product.id}`}>

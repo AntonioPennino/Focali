@@ -6,10 +6,10 @@ export function ShippingPage() {
       {/* Hero */}
       <section className="bg-[#E8DCC4]/30 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
+          <h1 className="mb-4 heading-hero-small">
             Spedizioni
           </h1>
-          <p className="text-[#1A1A1A]/70" style={{ fontSize: '1.125rem' }}>
+          <p className="text-[#1A1A1A]/70 text-base-custom">
             Come funzionano le spedizioni e cosa aspettarti
           </p>
         </div>
@@ -23,7 +23,7 @@ export function ShippingPage() {
               <div className="w-12 h-12 bg-[#D97941] rounded-full flex items-center justify-center mb-4">
                 <Truck className="text-white" size={24} />
               </div>
-              <h3 className="mb-3" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
+              <h3 className="mb-3 heading-lg">
                 Tempi di Spedizione
               </h3>
               <p className="text-[#1A1A1A]/80 mb-4">
@@ -38,7 +38,7 @@ export function ShippingPage() {
               <div className="w-12 h-12 bg-[#D97941] rounded-full flex items-center justify-center mb-4">
                 <Package className="text-white" size={24} />
               </div>
-              <h3 className="mb-3" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
+              <h3 className="mb-3 heading-lg">
                 Packaging
               </h3>
               <p className="text-[#1A1A1A]/80 mb-4">
@@ -53,7 +53,7 @@ export function ShippingPage() {
               <div className="w-12 h-12 bg-[#D97941] rounded-full flex items-center justify-center mb-4">
                 <MapPin className="text-white" size={24} />
               </div>
-              <h3 className="mb-3" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
+              <h3 className="mb-3 heading-lg">
                 Tracciamento
               </h3>
               <p className="text-[#1A1A1A]/80 mb-4">
@@ -68,7 +68,7 @@ export function ShippingPage() {
               <div className="w-12 h-12 bg-[#D97941] rounded-full flex items-center justify-center mb-4">
                 <Shield className="text-white" size={24} />
               </div>
-              <h3 className="mb-3" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
+              <h3 className="mb-3 heading-lg">
                 Assicurazione
               </h3>
               <p className="text-[#1A1A1A]/80 mb-4">
@@ -82,7 +82,7 @@ export function ShippingPage() {
 
           {/* Costi */}
           <div className="bg-[#1A1A1A] text-white p-8 rounded-lg mb-16">
-            <h2 className="mb-6 text-center" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem' }}>
+            <h2 className="mb-6 text-center heading-xl">
               Costi di Spedizione
             </h2>
             <div className="max-w-2xl mx-auto">
@@ -106,7 +106,7 @@ export function ShippingPage() {
 
           {/* Resi */}
           <div className="bg-[#E8DCC4]/30 p-8 rounded-lg">
-            <h2 className="mb-4 text-center" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem' }}>
+            <h2 className="mb-4 text-center heading-xl">
               Resi e Rimborsi
             </h2>
             <div className="max-w-2xl mx-auto">
@@ -130,7 +130,7 @@ export function ShippingPage() {
       {/* CTA */}
       <section className="py-16 bg-[#E8DCC4]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem' }}>
+          <h2 className="mb-4 heading-xl">
             Hai altre domande sulla spedizione?
           </h2>
           <p className="text-[#1A1A1A]/80 mb-6">

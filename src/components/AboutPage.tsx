@@ -25,10 +25,10 @@ export function AboutPage() {
         </div>
         
         <div className="relative z-10 text-center px-4 max-w-4xl">
-          <h1 className="text-white mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
+          <h1 className="text-white mb-4 heading-hero-small">
             Chi Sono
           </h1>
-          <p className="text-white/90" style={{ fontSize: '1.25rem' }}>
+          <p className="text-white/90 text-lg-custom">
             La mia storia e la mia passione per il cinema analogico
           </p>
         </div>
@@ -38,7 +38,7 @@ export function AboutPage() {
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', color: '#1A1A1A' }}>
+            <h2 className="heading-xl">
               La Mia Storia
             </h2>
             <p className="text-[#1A1A1A]/80">
@@ -67,10 +67,10 @@ export function AboutPage() {
       <section className="py-20 bg-[#E8DCC4]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
+            <h2 className="mb-4 heading-2xl">
               La Mia Missione
             </h2>
-            <p className="text-[#1A1A1A]/70 max-w-3xl mx-auto" style={{ fontSize: '1.125rem' }}>
+            <p className="text-[#1A1A1A]/70 max-w-3xl mx-auto text-base-custom">
               "Ogni cinepresa vintage ha una storia. Io la testo, la documento e te la consegno 
               pronta per scriverne un'altra: la tua."
             </p>
@@ -81,7 +81,7 @@ export function AboutPage() {
               <div className="w-16 h-16 bg-[#D97941] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="text-white" size={32} />
               </div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Passione Vera</h3>
+              <h3 className="mb-2 playfair-heading">Passione Vera</h3>
               <p className="text-[#1A1A1A]/70">
                 Non sono un negozio: sono un filmmaker che ama l'analogico. Ogni cinepresa 
                 che vendo l'ho testata come se dovessi usarla io stesso.
@@ -92,7 +92,7 @@ export function AboutPage() {
               <div className="w-16 h-16 bg-[#D97941] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="text-white" size={32} />
               </div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Trasparenza Totale</h3>
+              <h3 className="mb-2 playfair-heading">Trasparenza Totale</h3>
               <p className="text-[#1A1A1A]/70">
                 Video test completo, foto dettagliate, descrizione onesta. Niente filtri, 
                 niente bugie. Vedi esattamente quello che riceverai.
@@ -103,7 +103,7 @@ export function AboutPage() {
               <div className="w-16 h-16 bg-[#D97941] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="text-white" size={32} />
               </div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Supporto Diretto</h3>
+              <h3 className="mb-2 playfair-heading">Supporto Diretto</h3>
               <p className="text-[#1A1A1A]/70">
                 Scrivimi per qualsiasi dubbio. Parlo con te, non con un chatbot. 
                 Condivido la tua passione e voglio che tu faccia l'acquisto giusto.
@@ -117,7 +117,7 @@ export function AboutPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
+            <h2 className="mb-4 heading-2xl">
               Come Lavoro
             </h2>
             <p className="text-[#1A1A1A]/70 max-w-2xl mx-auto">
@@ -148,13 +148,13 @@ export function AboutPage() {
       {/* Values */}
       <section className="py-20 bg-[#1A1A1A] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="mb-12 text-center" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
+          <h2 className="mb-12 text-center heading-2xl">
             In Cosa Credo
           </h2>
           
           <div className="space-y-8">
             <div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
+              <h3 className="mb-2 heading-lg">
                 L'Analogico è Libertà
               </h3>
               <p className="text-white/80">
@@ -164,7 +164,7 @@ export function AboutPage() {
             </div>
 
             <div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
+              <h3 className="mb-2 heading-lg">
                 Il Test è Tutto
               </h3>
               <p className="text-white/80">
@@ -174,7 +174,7 @@ export function AboutPage() {
             </div>
 
             <div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
+              <h3 className="mb-2 heading-lg">
                 La Storia ha Valore
               </h3>
               <p className="text-white/80">
@@ -189,7 +189,7 @@ export function AboutPage() {
       {/* CTA */}
       <section className="py-20 bg-[#E8DCC4]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="mb-6" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
+          <h2 className="mb-6 heading-2xl">
             Facciamo Due Chiacchiere
           </h2>
           <p className="text-[#1A1A1A]/80 mb-8 max-w-2xl mx-auto">

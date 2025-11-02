@@ -24,10 +24,10 @@ export function ContactPage() {
       {/* Hero */}
       <section className="bg-[#E8DCC4]/30 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
+          <h1 className="mb-4 heading-hero-small">
             Facciamo Due Chiacchiere
           </h1>
-          <p className="text-[#1A1A1A]/70" style={{ fontSize: '1.125rem' }}>
+          <p className="text-[#1A1A1A]/70 text-base-custom">
             Hai dubbi su una cinepresa? Vuoi consigli per il tuo progetto? 
             O semplicemente vuoi parlare di cinema analogico? Scrivimi, rispondo sempre personalmente.
           </p>
@@ -40,7 +40,7 @@ export function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Form */}
             <div>
-              <h2 className="mb-6" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem' }}>
+              <h2 className="mb-6 heading-xl">
                 Inviaci un Messaggio
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -96,7 +96,7 @@ export function ContactPage() {
 
             {/* Contact Info */}
             <div>
-              <h2 className="mb-6" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem' }}>
+              <h2 className="mb-6 heading-xl">
                 Dove Trovarmi
               </h2>
 
@@ -165,7 +165,7 @@ export function ContactPage() {
 
               {/* FAQ Section */}
               <div className="mt-12 p-6 bg-[#1A1A1A] text-white rounded-lg">
-                <h3 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
+                <h3 className="mb-4 heading-lg">
                   Domande Frequenti
                 </h3>
                 <div className="space-y-4 text-sm">
@@ -197,7 +197,7 @@ export function ContactPage() {
       {/* Hours */}
       <section className="py-16 bg-[#E8DCC4]/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
+          <h3 className="mb-4 heading-lg">
             Quando Rispondo
           </h3>
           <p className="text-[#1A1A1A]/70">

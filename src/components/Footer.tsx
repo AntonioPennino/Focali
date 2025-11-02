@@ -9,9 +9,9 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                <span className="text-[#1A1A1A]" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.25rem' }}>F</span>
+                <span className="text-[#1A1A1A] logo-letter">F</span>
               </div>
-              <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem' }}>
+              <span className="logo-text">
                 Focali
               </span>
             </div>
@@ -26,7 +26,7 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Esplora</h4>
+            <h4 className="mb-4">Esplora</h4>
             <ul className="space-y-2">
               <li>
                 <a href="/catalogo" className="text-white/70 hover:text-[#D97941] transition-colors">
@@ -53,7 +53,7 @@ export function Footer() {
 
           {/* Support */}
           <div>
-            <h4 className="mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>Legale</h4>
+            <h4 className="mb-4">Legale</h4>
             <ul className="space-y-2">
               <li>
                 <a href="/privacy-policy" className="text-white/70 hover:text-[#D97941] transition-colors">

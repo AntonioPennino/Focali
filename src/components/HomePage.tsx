@@ -44,10 +44,10 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
         </div>
         
         <div className="relative z-10 text-center px-4 max-w-4xl">
-          <h1 className="text-white mb-6" style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: '1.2' }}>
+          <h1 className="text-white mb-6 heading-hero">
             Il Cinema Merita Strumenti Veri
           </h1>
-          <p className="text-white/90 mb-8 max-w-2xl mx-auto" style={{ fontSize: '1.25rem' }}>
+          <p className="text-white/90 mb-8 max-w-2xl mx-auto text-lg-custom">
             Cineprese analogiche testate personalmente da un filmmaker che, come te, 
             crede che ogni fotogramma conti
           </p>
@@ -81,7 +81,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
               <div className="w-16 h-16 bg-[#D97941] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Video className="text-white" size={32} />
               </div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Video Test Reale</h3>
+              <h3 className="mb-2 playfair-heading">Video Test Reale</h3>
               <p className="text-[#1A1A1A]/70">
                 Ogni cinepresa filmata in azione. Vedi come funziona prima di acquistare
               </p>
@@ -91,7 +91,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
               <div className="w-16 h-16 bg-[#D97941] rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle2 className="text-white" size={32} />
               </div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Storia Documentata</h3>
+              <h3 className="mb-2 playfair-heading">Storia Documentata</h3>
               <p className="text-[#1A1A1A]/70">
                 Ogni pezzo ha un passato: te lo racconto con foto, certificato e trasparenza totale
               </p>
@@ -101,7 +101,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
               <div className="w-16 h-16 bg-[#D97941] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Shield className="text-white" size={32} />
               </div>
-              <h3 className="mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>Garanzia 12 Mesi</h3>
+              <h3 className="mb-2 playfair-heading">Garanzia 12 Mesi</h3>
               <p className="text-[#1A1A1A]/70">
                 Acquista sicuro: ti garantisco personalmente ogni cinepresa per un anno
               </p>
@@ -114,7 +114,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
+            <h2 className="mb-4 heading-2xl">
               Cineprese in Evidenza
             </h2>
             <p className="text-[#1A1A1A]/70 max-w-2xl mx-auto">
@@ -159,7 +159,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
               />
             </div>
             <div>
-              <h2 className="mb-6" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
+              <h2 className="mb-6 heading-2xl">
                 Non Sono un Rivenditore, Sono un Filmmaker
               </h2>
               <p className="mb-4 text-white/80">
@@ -189,7 +189,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
+            <h2 className="mb-4 heading-2xl">
               Il Nostro Processo
             </h2>
             <p className="text-[#1A1A1A]/70 max-w-2xl mx-auto">
@@ -200,7 +200,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
             {/* Step 1 */}
             <div className="text-center relative">
-              <div className="w-12 h-12 bg-[#D97941] text-white rounded-full flex items-center justify-center mx-auto mb-4" style={{ fontSize: '1.25rem', fontFamily: 'Playfair Display, serif' }}>
+              <div className="w-12 h-12 bg-[#D97941] text-white rounded-full flex items-center justify-center mx-auto mb-4 step-circle">
                 1
               </div>
               <h4 className="mb-2">Ricerca e Selezione</h4>
@@ -211,7 +211,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
 
             {/* Step 2 */}
             <div className="text-center relative">
-              <div className="w-12 h-12 bg-[#D97941] text-white rounded-full flex items-center justify-center mx-auto mb-4" style={{ fontSize: '1.25rem', fontFamily: 'Playfair Display, serif' }}>
+              <div className="w-12 h-12 bg-[#D97941] text-white rounded-full flex items-center justify-center mx-auto mb-4 step-circle">
                 2
               </div>
               <h4 className="mb-2">Test Completo</h4>
@@ -222,7 +222,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
 
             {/* Step 3 */}
             <div className="text-center relative">
-              <div className="w-12 h-12 bg-[#D97941] text-white rounded-full flex items-center justify-center mx-auto mb-4" style={{ fontSize: '1.25rem', fontFamily: 'Playfair Display, serif' }}>
+              <div className="w-12 h-12 bg-[#D97941] text-white rounded-full flex items-center justify-center mx-auto mb-4 step-circle">
                 3
               </div>
               <h4 className="mb-2">Storytelling</h4>
@@ -233,7 +233,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
 
             {/* Step 4 */}
             <div className="text-center relative">
-              <div className="w-12 h-12 bg-[#D97941] text-white rounded-full flex items-center justify-center mx-auto mb-4" style={{ fontSize: '1.25rem', fontFamily: 'Playfair Display, serif' }}>
+              <div className="w-12 h-12 bg-[#D97941] text-white rounded-full flex items-center justify-center mx-auto mb-4 step-circle">
                 4
               </div>
               <h4 className="mb-2">Spedizione Curata</h4>
@@ -249,7 +249,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
       <section className="py-20 bg-[#E8DCC4]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
+            <h2 className="mb-4 heading-2xl">
               Cosa Dicono i Nostri Clienti
             </h2>
           </div>
@@ -297,7 +297,7 @@ export function HomePage({ products, onAddToCart }: HomePageProps) {
       {/* CTA Final */}
       <section className="py-20 bg-[#E8DCC4]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="mb-6" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.5rem' }}>
+          <h2 className="mb-6 heading-2xl">
             Inizia il Tuo Viaggio nell'Analogico
           </h2>
           <p className="text-[#1A1A1A]/80 mb-8 max-w-2xl mx-auto">

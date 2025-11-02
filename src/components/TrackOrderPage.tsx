@@ -43,10 +43,7 @@ export function TrackOrderPage() {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
           <Package size={64} className="mx-auto mb-6 text-[#A0522D]" />
-          <h1
-            style={{ fontFamily: 'Playfair Display, serif' }}
-            className="text-4xl md:text-5xl mb-4"
-          >
+          <h1 className="text-4xl md:text-5xl mb-4 playfair-heading">
             Traccia il Tuo Ordine
           </h1>
           <p className="text-[#1A1A1A]/70">
@@ -87,8 +84,7 @@ export function TrackOrderPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full hover:bg-[#8B4513] py-6 text-lg rounded-md font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              style={{ backgroundColor: '#A0522D', color: '#ffffff' }}
+              className="w-full bg-[#A0522D] text-white hover:bg-[#8B4513] py-6 text-lg rounded-md font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 'Ricerca in corso...'
@@ -108,10 +104,7 @@ export function TrackOrderPage() {
               <CheckCircle size={48} className="text-green-600" />
             </div>
 
-            <h2
-              style={{ fontFamily: 'Playfair Display, serif' }}
-              className="text-2xl text-center mb-6"
-            >
+            <h2 className="text-2xl text-center mb-6 playfair-heading">
               Ordine Confermato
             </h2>
 

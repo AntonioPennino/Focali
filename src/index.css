@@ -122,6 +122,7 @@
 
   html, :host {
     -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
     tab-size: 4;
     line-height: 1.5;
     font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
@@ -883,14 +884,17 @@
   }
 
   .border-\[\#1A1A1A\]\/5 {
+    border-color: rgba(26, 26, 26, 0.05);
     border-color: oklab(21.7786% --7.45058e-9 0 / .05);
   }
 
   .border-\[\#1A1A1A\]\/10 {
+    border-color: rgba(26, 26, 26, 0.1);
     border-color: oklab(21.7786% --7.45058e-9 0 / .1);
   }
 
   .border-\[\#1A1A1A\]\/20 {
+    border-color: rgba(26, 26, 26, 0.2);
     border-color: oklab(21.7786% --7.45058e-9 0 / .2);
   }
 
@@ -931,10 +935,12 @@
   }
 
   .bg-\[\#1A1A1A\]\/60 {
+    background-color: rgba(26, 26, 26, 0.6);
     background-color: oklab(21.7786% --7.45058e-9 0 / .6);
   }
 
   .bg-\[\#1A1A1A\]\/80 {
+    background-color: rgba(26, 26, 26, 0.8);
     background-color: oklab(21.7786% --7.45058e-9 0 / .8);
   }
 
@@ -947,14 +953,17 @@
   }
 
   .bg-\[\#E8DCC4\]\/10 {
+    background-color: rgba(232, 220, 196, 0.1);
     background-color: oklab(89.7767% .00326395 .0344419 / .1);
   }
 
   .bg-\[\#E8DCC4\]\/20 {
+    background-color: rgba(232, 220, 196, 0.2);
     background-color: oklab(89.7767% .00326395 .0344419 / .2);
   }
 
   .bg-\[\#E8DCC4\]\/30 {
+    background-color: rgba(232, 220, 196, 0.3);
     background-color: oklab(89.7767% .00326395 .0344419 / .3);
   }
 
@@ -1164,14 +1173,17 @@
   }
 
   .text-\[\#1A1A1A\]\/60 {
+    color: rgba(26, 26, 26, 0.6);
     color: oklab(21.7786% --7.45058e-9 0 / .6);
   }
 
   .text-\[\#1A1A1A\]\/70 {
+    color: rgba(26, 26, 26, 0.7);
     color: oklab(21.7787% --7.45058e-9 0 / .7);
   }
 
   .text-\[\#1A1A1A\]\/80 {
+    color: rgba(26, 26, 26, 0.8);
     color: oklab(21.7786% --7.45058e-9 0 / .8);
   }
 
@@ -1343,6 +1355,7 @@
 
   .select-none {
     -webkit-user-select: none;
+    -moz-user-select: none;
     user-select: none;
   }
 
@@ -1422,6 +1435,7 @@
 
   @media (hover: hover) {
     .hover\:bg-\[\#E8DCC4\]\/30:hover {
+      background-color: rgba(232, 220, 196, 0.3);
       background-color: oklab(89.7767% .00326395 .0344419 / .3);
     }
   }

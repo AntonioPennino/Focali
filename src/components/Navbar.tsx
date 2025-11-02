@@ -18,9 +18,9 @@ export function Navbar({ onCartClick, cartItemsCount }: NavbarProps) {
           {/* Logo */}
           <a href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-[#1A1A1A] rounded-full flex items-center justify-center">
-              <span className="text-white" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.25rem' }}>F</span>
+              <span className="text-white logo-letter">F</span>
             </div>
-            <span className="tracking-wide" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', color: '#1A1A1A' }}>
+            <span className="tracking-wide logo-text">
               Focali
             </span>
           </a>

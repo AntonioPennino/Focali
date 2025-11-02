@@ -47,10 +47,10 @@ export function FAQPage() {
       {/* Hero */}
       <section className="bg-[#E8DCC4]/30 py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
+          <h1 className="mb-4 heading-hero-small">
             Domande Frequenti
           </h1>
-          <p className="text-[#1A1A1A]/70" style={{ fontSize: '1.125rem' }}>
+          <p className="text-[#1A1A1A]/70 text-base-custom">
             Tutto quello che devi sapere prima di acquistare
           </p>
         </div>
@@ -62,7 +62,7 @@ export function FAQPage() {
           <div className="space-y-6">
             {faqs.map((faq, index) => (
               <div key={index} className="bg-white rounded-lg p-6 shadow-sm border border-[#E8DCC4]">
-                <h3 className="text-[#1A1A1A] mb-3" style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.25rem' }}>
+                <h3 className="text-[#1A1A1A] mb-3 heading-md">
                   {faq.question}
                 </h3>
                 <p className="text-[#1A1A1A]/80">
@@ -77,7 +77,7 @@ export function FAQPage() {
       {/* CTA */}
       <section className="py-16 bg-[#1A1A1A] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="mb-4" style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem' }}>
+          <h2 className="mb-4 heading-xl">
             Non hai trovato la risposta?
           </h2>
           <p className="text-white/80 mb-6">

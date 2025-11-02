@@ -3,7 +3,7 @@ export function TermsAndConditionsPage() {
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
-          <h1 className="text-4xl font-bold text-gray-900" style={{ fontFamily: 'Playfair Display, serif' }}>
+          <h1 className="text-4xl font-bold text-gray-900 playfair-heading">
             Termini e Condizioni di Vendita
           </h1>
           <p className="mt-4 text-lg text-gray-600">
