@@ -31,7 +31,7 @@ export const handler: Handler = async (event) => {
     };
   }
 
-  console.log("--- save-order function invoked ---");
+  // save-order invoked
 
   try {
     if (!event.body) {
@@ -66,7 +66,7 @@ export const handler: Handler = async (event) => {
       };
     }
 
-    console.log("Saving order for email:", customerEmail.substring(0, 3) + "***");
+  // saving order for email (partial in logs)
 
     // Genera numero d'ordine univoco
     let orderNumber = generateOrderNumber();
@@ -104,7 +104,7 @@ export const handler: Handler = async (event) => {
       return { statusCode: 500, body: JSON.stringify({ error: "Failed to save order" }) };
     }
 
-    console.log("Order saved successfully");
+  // order saved
 
     return {
       statusCode: 200,

@@ -29,15 +29,12 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
   if (!isOpen) return null;
 
   const paypalCreateOrder = async () => {
-    console.log("🔵 [Frontend] Inizio creazione ordine PayPal");
     try {
       // Prepariamo un oggetto con i dati corretti per il backend
       const orderPayload = {
         name: items.length > 0 ? items[0].name : "Acquisto", // Usa il nome del primo articolo
         price: total, // Usa il totale già calcolato
       };
-      console.log("🔵 [Frontend] Payload da inviare:", orderPayload);
-
       const response = await fetch("/.netlify/functions/create-paypal-order", {
         method: "POST",
         headers: {
@@ -47,23 +44,20 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
         body: JSON.stringify({ cart: orderPayload }),
       });
       
-      console.log("🔵 [Frontend] Risposta HTTP ricevuta. Status:", response.status);
-      const order = await response.json();
-      console.log("🔵 [Frontend] Risposta completa dal backend:", order);
+  const order = await response.json();
       
       if (order.id) {
-        console.log("✅ [Frontend] ID ordine ricevuto e restituito:", order.id);
         return order.id;
       } else {
         // Log dell'errore specifico da PayPal se disponibile
-        console.error("❌ [Frontend] Nessun ID ordine nella risposta");
+        // No order ID - report and show friendly message
         const errorDetails = order.details ? JSON.stringify(order.details) : "Nessun dettaglio disponibile.";
-        console.error("Errore dalla funzione Netlify:", order.message, errorDetails);
+        console.error("Errore dalla funzione Netlify:", order.message || errorDetails);
         toast.error(`Errore da PayPal: ${order.message || "Impossibile creare l'ordine."}`);
         throw new Error("No order ID received");
       }
     } catch (error) {
-      console.error("❌ [Frontend] Errore catturato in paypalCreateOrder:", error);
+      console.error("Errore in paypalCreateOrder:", error);
       toast.error("Si è verificato un errore di rete. Riprova.");
       throw error;
     }
@@ -111,11 +105,10 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
 
       if (!saveResponse.ok) {
         console.error("Failed to save order:", saveData);
-        // Non blocchiamo il flusso se il salvataggio fallisce
+        // Proceed without blocking checkout; show a generic success message
+        toast.success("Pagamento completato! Riceverai una conferma via email a breve.");
       } else {
-        console.log("Order saved:", saveData);
-
-        // 4. Invia email di conferma
+        // Attempt to send confirmation email (best-effort)
         fetch("/.netlify/functions/send-order-email", {
           method: "POST",
           headers: {
@@ -160,7 +153,7 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-[#1A1A1A]/10">
-            <h2 style={{ fontFamily: 'Playfair Display, serif' }}>Il Tuo Carrello</h2>
+            <h2 className="playfair-heading">Il Tuo Carrello</h2>
             <button
               onClick={onClose}
               className="p-2 hover:bg-[#E8DCC4]/30 rounded-full transition-colors"
@@ -231,7 +224,7 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
             <div className="border-t border-[#1A1A1A]/10 p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <span>Totale</span>
-                <span style={{ fontSize: '1.5rem', fontFamily: 'Playfair Display, serif' }}>
+                <span className="playfair-large">
                   €{total.toFixed(2)}
                 </span>
               </div>

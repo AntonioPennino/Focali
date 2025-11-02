@@ -15,7 +15,7 @@ export const handler: Handler = async (event) => {
     };
   }
 
-  console.log("--- get-order function invoked ---");
+  // get-order invoked
 
   try {
     const { orderNumber, email } = event.queryStringParameters || {};
@@ -46,7 +46,7 @@ export const handler: Handler = async (event) => {
       };
     }
 
-    console.log("Searching order for email (partial):", email.substring(0, 3) + "***");
+  // Searching order for email (partial)
 
     // Cerca l'ordine nel database
     const { data, error } = await supabase
@@ -57,14 +57,13 @@ export const handler: Handler = async (event) => {
       .single();
 
     if (error || !data) {
-      console.log("Order not found");
+      // order not found
       return {
         statusCode: 404,
         body: JSON.stringify({ error: "Ordine non trovato. Verifica numero ordine e email." }),
       };
     }
-
-    console.log("Order found successfully");
+    // order found
 
     return {
       statusCode: 200,

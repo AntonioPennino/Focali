@@ -4,6 +4,11 @@ import { ImageWithFallback } from './ImageWithFallback';
 import { CheckCircle2, Shield, Video } from 'lucide-react';
 import { useState } from 'react';
 
+// Import images so Vite knows to bundle them
+// Use public static paths (served from `public/imgs/`) so production serves them as /imgs/... 
+const sankyo1 = '/imgs/IMG_20251031_082526_969.jpg';
+const sankyo3 = '/imgs/IMG_20251031_082527_412.jpg';
+
 interface Product {
   id: number;
   name: string;
@@ -23,12 +28,9 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
   const { id } = useParams<{ id: string }>();
   const product = products.find((p) => p.id === parseInt(id || ''));
   
-  // Immagini della Sankyo
-  const sankyoImages = [
-    '/src/imgs/IMG_20251031_082526_969.jpg',
-    '/src/imgs/IMG_20251031_082527_277.jpg',
-    '/src/imgs/IMG_20251031_082527_412.jpg'
-  ];
+  // Immagini della Sankyo (public static assets). The user requested removing the duplicate
+  // first/second image, so we keep two unique photos.
+  const sankyoImages = [sankyo1, sankyo3];
   
   const [selectedImage, setSelectedImage] = useState(0);
 
@@ -49,11 +51,21 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
             <div>
               {/* Main Image */}
               <div className="mb-4">
-                <ImageWithFallback
-                  src={sankyoImages[selectedImage]}
-                  alt={`${product.name} - Foto ${selectedImage + 1}`}
-                  className="w-full h-auto object-cover rounded-lg shadow-lg"
-                />
+                {/* Serve modern WebP when available, fallback to JPG */}
+                {(() => {
+                  const jpg = sankyoImages[selectedImage];
+                  const webp = jpg.replace(/\.jpe?g$/i, '.webp');
+                  return (
+                    <picture>
+                      <source type="image/webp" srcSet={webp} />
+                      <ImageWithFallback
+                        src={jpg}
+                        alt={`${product.name} - Foto ${selectedImage + 1}`}
+                        className="w-full h-auto object-cover rounded-lg shadow-lg"
+                      />
+                    </picture>
+                  );
+                })()}
               </div>
               
               {/* Thumbnails */}
@@ -69,11 +81,20 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
                         : 'border-gray-200 hover:border-[#D97941]'
                     }`}
                   >
-                    <ImageWithFallback
-                      src={img}
-                      alt={`${product.name} - Miniatura ${index + 1}`}
-                      className="w-full h-24 object-cover"
-                    />
+                    {(() => {
+                      const jpg = img;
+                      const thumbWebp = jpg.replace(/\.jpe?g$/i, '.thumb.webp');
+                      return (
+                        <picture>
+                          <source type="image/webp" srcSet={`${thumbWebp} 1x`} />
+                          <ImageWithFallback
+                            src={jpg}
+                            alt={`${product.name} - Miniatura ${index + 1}`}
+                            className="w-full h-24 object-cover"
+                          />
+                        </picture>
+                      );
+                    })()}
                   </button>
                 ))}
               </div>
@@ -81,7 +102,7 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
 
             {/* Product Details */}
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4 playfair-heading">
                 {product.name}
               </h1>
               <p className="text-2xl text-gray-800 mb-6">{product.price} €</p>

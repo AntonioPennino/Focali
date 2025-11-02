@@ -11,7 +11,7 @@ export const handler: Handler = async (event) => {
     };
   }
 
-  console.log("--- send-order-email function invoked ---");
+  // send-order-email invoked
 
   try {
     if (!event.body) {
@@ -37,7 +37,7 @@ export const handler: Handler = async (event) => {
       };
     }
 
-    console.log("Sending email to:", customerEmail.substring(0, 3) + "***");
+  // sending email to (partial in logs)
 
     const emailHtml = `
       <!DOCTYPE html>
@@ -116,8 +116,6 @@ export const handler: Handler = async (event) => {
       console.error("Resend error:", data);
       return { statusCode: 500, body: JSON.stringify({ error: data }) };
     }
-
-    console.log("Email sent successfully");
 
     return {
       statusCode: 200,

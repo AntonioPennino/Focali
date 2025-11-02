@@ -220,3 +220,13 @@
 html {
   font-size: var(--font-size);
 }
+
+/* Utility classes for Playfair headings used in a few places */
+.playfair-heading {
+  font-family: 'Playfair Display', serif;
+}
+
+.playfair-large {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+}
