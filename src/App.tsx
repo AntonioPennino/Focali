@@ -13,7 +13,6 @@ import { AboutPage } from './components/AboutPage';
 import { ContactPage } from './components/ContactPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { TermsAndConditionsPage } from './components/TermsAndConditionsPage';
-import { CookieBanner } from './components/CookieBanner';
 import { TrackOrderPage } from './components/TrackOrderPage';
 import { FAQPage } from './components/FAQPage';
 import { ShippingPage } from './components/ShippingPage';
@@ -132,7 +131,6 @@ export default function App() {
         onSuccessfulCheckout={handleSuccessfulCheckout}
       />
 
-      <CookieBanner />
       <Toaster position="bottom-right" />
     </div>
   );
