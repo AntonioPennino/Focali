@@ -1,23 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focali — Vintage Store</title>
 
-  <!DOCTYPE html>
-  <html lang="it">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Focali — Vintage Store</title>
-      
-      <!-- Silktide Consent Manager (GDPR/ePrivacy compliant) -->
-      <script 
-        src="https://consent.silktide.com/client/index.js"
-        data-config="https://consent.silktide.com/client/config/d1a3c4f6-8b2e-4a9f-c1d3-e5f7a9b2c4d6"
-        async
-        defer>
-      </script>
-    </head>
+    <link
+      rel="stylesheet"
+      id="silktide-consent-manager-css"
+      href="/cookie-banner/silktide-consent-manager.css"
+    />
+    <script src="/cookie-banner/silktide-consent-manager.js"></script>
+    <script>
+      silktideCookieBannerManager.updateCookieBannerConfig({
+        background: {
+          showBackground: true,
+        },
+        cookieIcon: {
+          position: "bottomLeft",
+        },
+        cookieTypes: [
+          {
+            id: "necessari",
+            name: "Necessari",
+            description:
+              "<p>Questi cookie sono necessari per il corretto funzionamento del sito web e non possono essere disattivati. Sono utili per operazioni come l'accesso e l'impostazione delle preferenze sulla privacy.</p>",
+            required: true,
+            onAccept: function () {
+              console.log("Add logic for the required Necessari here");
+            },
+          },
+          {
+            id: "analitici",
+            name: "Analitici",
+            description:
+              "<p>Questi cookie ci aiutano a migliorare il sito monitorando quali sono le pagine più popolari e come i visitatori si muovono nel sito.</p>",
+            required: false,
+            onAccept: function () {
+              gtag("consent", "update", {
+                analytics_storage: "granted",
+              });
+              dataLayer.push({
+                event: "consent_accepted_analitici",
+              });
+            },
+            onReject: function () {
+              gtag("consent", "update", {
+                analytics_storage: "denied",
+              });
+            },
+          },
+          {
+            id: "pubblicit",
+            name: "Pubblicità",
+            description:
+              "<p>Questi cookie forniscono funzionalità aggiuntive e personalizzazioni per migliorare la tua esperienza. Possono essere impostati da noi o dai partner di cui utilizziamo i servizi.</p>",
+            required: false,
+            onAccept: function () {
+              gtag("consent", "update", {
+                ad_storage: "granted",
+                ad_user_data: "granted",
+                ad_personalization: "granted",
+              });
+              dataLayer.push({
+                event: "consent_accepted_pubblicit",
+              });
+            },
+            onReject: function () {
+              gtag("consent", "update", {
+                ad_storage: "denied",
+                ad_user_data: "denied",
+                ad_personalization: "denied",
+              });
+            },
+          },
+        ],
+        text: {
+          banner: {
+            description:
+              '<p>Utilizziamo i cookie sul nostro sito per migliorare la tua esperienza utente, fornire contenuti personalizzati e analizzare il nostro traffico. <a href="https://focalishop.netlify.app/cookie-policy" target="_blank">Informativa sui cookie.</a></p>',
+            acceptAllButtonText: "Accetta Tutti",
+            acceptAllButtonAccessibleLabel: "Accetta tutti i cookie",
+            rejectNonEssentialButtonText: "Rifiuta Non Essenziali",
+            rejectNonEssentialButtonAccessibleLabel:
+              "Rifiuta cookie non essenziali",
+            preferencesButtonText: "Preferenze",
+            preferencesButtonAccessibleLabel: "Gestisci preferenze",
+          },
+          preferences: {
+            title: "Personalizza le tue preferenze sui cookie",
+            description:
+              '<div style="line-height: 20px;">Rispettiamo il tuo diritto alla privacy. Puoi scegliere di non consentire alcuni tipi di cookie. Le tue preferenze sui cookie verranno applicate su tutto il nostro sito web.</div>',
+            creditLinkText: "Ottieni questo banner gratis",
+            creditLinkAccessibleLabel: "Ottieni questo banner gratis",
+          },
+        },
+        position: {
+          banner: "bottomCenter",
+        },
+      });
+    </script>
+  </head>
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
