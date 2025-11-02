@@ -1,7 +1,10 @@
 import type { Handler } from "@netlify/functions";
 
-const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET } = process.env;
-const base = "https://api-m.sandbox.paypal.com";
+const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PAYPAL_MODE, PAYPAL_BASE_URL } = process.env;
+// PAYPAL_MODE can be 'sandbox' or 'live'. PAYPAL_BASE_URL can override.
+const base = PAYPAL_BASE_URL
+  ? PAYPAL_BASE_URL
+  : (PAYPAL_MODE === 'live' ? 'https://api-m.paypal.com' : 'https://api-m.sandbox.paypal.com');
 
 // Funzione per generare un token di accesso
 const generateAccessToken = async () => {
@@ -13,7 +16,6 @@ const generateAccessToken = async () => {
     const auth = Buffer.from(
       `${PAYPAL_CLIENT_ID}:${PAYPAL_CLIENT_SECRET}`
     ).toString("base64");
-
     const response = await fetch(`${base}/v1/oauth2/token`, {
       method: "POST",
       body: "grant_type=client_credentials",
@@ -23,6 +25,16 @@ const generateAccessToken = async () => {
     });
 
     const data = await response.json();
+
+    if (!response.ok || !data.access_token) {
+      // Include PayPal response message in logs for debugging (do not leak secrets)
+      console.error("PayPal auth failed:", response.status, data);
+      const msg = data.error_description || data.error || 'PayPal auth failed';
+      const err: any = new Error(msg);
+      err.code = response.status;
+      throw err;
+    }
+
     return data.access_token;
   } catch (error) {
     // Log error for Netlify logs
@@ -62,6 +74,21 @@ const createOrder = async (cart: any): Promise<any> => {
     method: "POST",
     body: JSON.stringify(payload),
   });
+  // If PayPal returns a non-2xx status, include the details in the returned object
+  if (!response.ok) {
+    let bodyText = 'Could not parse PayPal error';
+    try {
+      const parsed = await response.json();
+      bodyText = parsed;
+    } catch (e) {
+      bodyText = await response.text();
+    }
+    console.error('PayPal create order error', response.status, bodyText);
+    return {
+      jsonResponse: { error: 'PAYPAL_CREATE_ORDER_FAILED', details: bodyText },
+      httpStatusCode: response.status,
+    };
+  }
 
   return handleResponse(response);
 };

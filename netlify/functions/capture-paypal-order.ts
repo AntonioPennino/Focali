@@ -1,7 +1,9 @@
 import { Handler, HandlerEvent } from "@netlify/functions";
 
-const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET } = process.env;
-const base = "https://api-m.sandbox.paypal.com";
+const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PAYPAL_MODE, PAYPAL_BASE_URL } = process.env;
+const base = PAYPAL_BASE_URL
+    ? PAYPAL_BASE_URL
+    : (PAYPAL_MODE === 'live' ? 'https://api-m.paypal.com' : 'https://api-m.sandbox.paypal.com');
 
 // Generate an access token
 async function generateAccessToken() {
