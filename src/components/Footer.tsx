@@ -61,6 +61,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/cookie-policy" className="text-white/70 hover:text-[#D97941] transition-colors">
+                  Cookie Policy
+                </a>
+              </li>
+              <li>
                 <a href="/termini-e-condizioni" className="text-white/70 hover:text-[#D97941] transition-colors">
                   Termini e Condizioni
                 </a>

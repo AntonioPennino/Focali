@@ -12,6 +12,7 @@ import { ProductPage } from './components/ProductPage';
 import { AboutPage } from './components/AboutPage';
 import { ContactPage } from './components/ContactPage';
 import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
+import { CookiePolicyPage } from './components/CookiePolicyPage';
 import { TermsAndConditionsPage } from './components/TermsAndConditionsPage';
 import { TrackOrderPage } from './components/TrackOrderPage';
 import { FAQPage } from './components/FAQPage';
@@ -114,6 +115,7 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/traccia-ordine" element={<TrackOrderPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
           <Route path="/termini-e-condizioni" element={<TermsAndConditionsPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/spedizioni" element={<ShippingPage />} />

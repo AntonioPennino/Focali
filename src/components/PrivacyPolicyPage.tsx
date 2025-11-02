@@ -63,19 +63,7 @@ export function PrivacyPolicyPage() {
 
           <h2>Cookie Policy</h2>
           <p>
-            Questo sito utilizza cookie per garantire il suo corretto funzionamento e per migliorare l'esperienza di navigazione. Di seguito trovi i dettagli sui tipi di cookie utilizzati.
-          </p>
-          <h4>Cookie Tecnici</h4>
-          <p>
-            Questi cookie sono essenziali per il funzionamento del sito e non possono essere disabilitati. Includono, ad esempio, il cookie utilizzato per memorizzare il tuo consenso all'uso dei cookie stessi. Non raccolgono informazioni personali.
-          </p>
-          <h4>Cookie Analitici (se presenti)</h4>
-          <p>
-            Potremmo utilizzare cookie analitici di terze parti (es. Google Analytics) in forma anonima e aggregata per analizzare il traffico sul sito e capire come gli utenti interagiscono con i contenuti. Questi cookie non vengono utilizzati per identificarti personalmente.
-          </p>
-          <h4>Gestione dei Cookie</h4>
-          <p>
-            Puoi gestire le preferenze relative ai cookie direttamente dal tuo browser per impedire che terze parti possano installarli. Tramite le preferenze del browser è inoltre possibile eliminare i cookie installati in passato. Tieni presente che disabilitando tutti i cookie, il funzionamento di questo sito potrebbe essere compromesso.
+            Questo sito utilizza cookie per garantire il suo corretto funzionamento e per migliorare l'esperienza di navigazione. Per dettagli completi sui tipi di cookie utilizzati, come gestirli e le tue scelte, consulta la nostra <a href="/cookie-policy" className="text-[#D97941] hover:text-[#A0522D] underline">Informativa sui Cookie</a>.
           </p>
 
           <h2>I Tuoi Diritti in Materia di Privacy (GDPR)</h2>
