@@ -8,7 +8,6 @@ interface Product {
   year: string;
   price: number;
   image: string;
-  hasVideoTest: boolean;
 }
 
 interface CatalogPageProps {

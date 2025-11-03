@@ -28,7 +28,6 @@ interface Product {
   year: string;
   price: number;
   image: string;
-  hasVideoTest: boolean;
 }
 
 interface CartItem extends Product {
@@ -43,8 +42,7 @@ const PRODUCTS: Product[] = [
     brand: 'Sankyo',
     year: '1978',
     price: 150,
-    image: sankyo1,
-    hasVideoTest: true
+    image: sankyo1
   }
 ];
 

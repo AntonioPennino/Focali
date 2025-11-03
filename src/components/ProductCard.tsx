@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Play } from 'lucide-react';
 import { useState } from 'react';
@@ -11,7 +10,6 @@ interface Product {
   year: string;
   price: number;
   image: string;
-  hasVideoTest: boolean;
 }
 
 interface ProductCardProps {
@@ -29,28 +27,22 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Container */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-[#E8DCC4]/20">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        
-        {/* Video Test Badge */}
-        {product.hasVideoTest && (
-          <Badge className="absolute top-3 right-3 bg-[#1A1A1A] text-white border-0">
-            <Play size={12} className="mr-1" />
-            Video Test
-          </Badge>
-        )}
-
-        {/* Hover Overlay */}
-        {isHovered && (
-          <div className="absolute inset-0 bg-[#1A1A1A]/80 flex items-center justify-center transition-opacity duration-300">
-            <Play size={48} className="text-white opacity-90" />
-          </div>
-        )}
-      </div>
+      <Link to={`/product/${product.id}`} className="block relative">
+        <div className="relative aspect-[4/3] overflow-hidden bg-[#E8DCC4]/20">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          
+          {/* Hover Overlay with Play Icon */}
+          {isHovered && (
+            <div className="absolute inset-0 bg-[#1A1A1A]/60 flex items-center justify-center transition-opacity duration-300">
+              <Play size={48} className="text-white opacity-90" />
+            </div>
+          )}
+        </div>
+      </Link>
 
       {/* Content */}
       <div className="p-5">

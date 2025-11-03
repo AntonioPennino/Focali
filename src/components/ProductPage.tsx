@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { Button } from './ui/button';
 import { ImageWithFallback } from './ImageWithFallback';
-import { CheckCircle2, Shield, Video } from 'lucide-react';
+import { CheckCircle2, Shield } from 'lucide-react';
 import { useState } from 'react';
 import { SEO } from './SEO';
 
@@ -17,7 +17,6 @@ interface Product {
   year: string;
   price: number;
   image: string;
-  hasVideoTest: boolean;
 }
 
 interface ProductPageProps {
@@ -145,11 +144,11 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
               <div className="mt-8 space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-[#E8DCC4]/80 rounded-full flex items-center justify-center">
-                    <Video className="text-[#1A1A1A]" size={24} />
+                    <CheckCircle2 className="text-[#1A1A1A]" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Test Completo</h4>
-                    <p className="text-sm text-gray-600">Video test funzionale incluso per mostrarti ogni dettaglio.</p>
+                    <h4 className="font-semibold">Testata Personalmente</h4>
+                    <p className="text-sm text-gray-600">Verificata da me, filmmaker professionista, pronta all'uso.</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
