@@ -25,7 +25,7 @@ export function CatalogPage({ products, onAddToCart }: CatalogPageProps) {
         type="website"
       />
       {/* Hero */}
-      <section className="bg-[#E8DCC4]/30 py-20">
+      <section className="bg-[#E8DCC4]/30 py-20 animate-fade-in-down">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="mb-4 heading-hero-small">
             Catalogo Cineprese
@@ -42,25 +42,26 @@ export function CatalogPage({ products, onAddToCart }: CatalogPageProps) {
           {products.length > 0 ? (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {products.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    product={product}
-                    onAddToCart={onAddToCart}
-                  />
+                {products.map((product, idx) => (
+                  <div key={product.id} className={`animate-fade-in-up animate-stagger-${(idx % 5) + 1}`}>
+                    <ProductCard
+                      product={product}
+                      onAddToCart={onAddToCart}
+                    />
+                  </div>
                 ))}
               </div>
 
-              <div className="mt-12 text-center">
+              <div className="mt-12 text-center animate-fade-in-up">
                 <p className="text-[#1A1A1A]/60 text-sm">
                   Nuove cineprese in arrivo ogni settimana. Seguimi su Instagram per gli aggiornamenti!
                 </p>
               </div>
             </>
           ) : (
-            <div className="text-center py-16">
+            <div className="text-center py-16 animate-scale-in">
               <div className="mb-6">
-                <div className="w-24 h-24 bg-[#E8DCC4] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-24 h-24 bg-[#E8DCC4] rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce-gentle">
                   <span className="text-6xl">📹</span>
                 </div>
               </div>
@@ -76,13 +77,13 @@ export function CatalogPage({ products, onAddToCart }: CatalogPageProps) {
                   href="https://instagram.com/focali"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-[#D97941] hover:bg-[#A0522D] text-white px-6 py-3 rounded-md transition-colors"
+                  className="inline-block bg-[#D97941] hover:bg-[#A0522D] text-white px-6 py-3 rounded-md transition-all duration-300 hover:shadow-lg transform hover:scale-105"
                 >
                   Seguimi su Instagram
                 </a>
                 <a
                   href="/contact"
-                  className="inline-block border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#E8DCC4]/30 px-6 py-3 rounded-md transition-colors"
+                  className="inline-block border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#E8DCC4]/30 px-6 py-3 rounded-md transition-all duration-300"
                 >
                   Scrivimi
                 </a>
@@ -96,18 +97,18 @@ export function CatalogPage({ products, onAddToCart }: CatalogPageProps) {
       <section className="py-16 bg-[#1A1A1A] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-3xl mb-2">📹</div>
+            <div className="animate-fade-in-up animate-stagger-1 transition-all duration-300 hover:scale-105">
+              <div className="text-3xl mb-2 animate-bounce-gentle">📹</div>
               <h3 className="mb-2 playfair-heading">Video Test</h3>
               <p className="text-white/70 text-sm">Ogni cinepresa ha un video test completo</p>
             </div>
-            <div>
-              <div className="text-3xl mb-2">✅</div>
+            <div className="animate-fade-in-up animate-stagger-2 transition-all duration-300 hover:scale-105">
+              <div className="text-3xl mb-2 animate-bounce-gentle">✅</div>
               <h3 className="mb-2 playfair-heading">Garanzia 12 Mesi</h3>
               <p className="text-white/70 text-sm">Ti garantisco personalmente ogni pezzo</p>
             </div>
-            <div>
-              <div className="text-3xl mb-2">🚚</div>
+            <div className="animate-fade-in-up animate-stagger-3 transition-all duration-300 hover:scale-105">
+              <div className="text-3xl mb-2 animate-bounce-gentle">🚚</div>
               <h3 className="mb-2 playfair-heading">Spedizione Gratis</h3>
               <p className="text-white/70 text-sm">In Italia mainland, con corriere tracciato</p>
             </div>

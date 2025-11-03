@@ -58,13 +58,13 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Product Images Gallery */}
-            <div>
+            <div className="animate-slide-in-left">
               {/* Main Image - Large */}
               <div className="mb-6 bg-white rounded-lg overflow-hidden shadow-lg">
                 <ImageWithFallback
                   src={sankyoImages[selectedImage]}
                   alt={`${product.name} - Foto ${selectedImage + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-opacity duration-300"
                 />
               </div>
               
@@ -74,13 +74,13 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
               </div>
               
               {/* Thumbnails - Horizontal Strip */}
-              <div className="flex gap-3 justify-center">
+              <div className="flex gap-3 justify-center animate-fade-in-up">
                 {sankyoImages.map((img, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
                     aria-label={`Visualizza foto ${index + 1}`}
-                    className={`relative overflow-hidden rounded-md border-2 transition-all transform hover:scale-105 ${
+                    className={`relative overflow-hidden rounded-md border-2 transition-all transform hover:scale-110 ${
                       selectedImage === index 
                         ? 'border-[#D97941] shadow-md ring-2 ring-[#D97941] ring-offset-2' 
                         : 'border-gray-300 hover:border-[#A0522D] opacity-70 hover:opacity-100'
@@ -107,7 +107,7 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
             </div>
 
             {/* Product Details */}
-            <div>
+            <div className="animate-slide-in-right">
               <h1 className="text-4xl font-bold text-gray-900 mb-4 playfair-heading">
                 {product.name}
               </h1>
@@ -131,15 +131,15 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
 
               <Button
                 size="lg"
-                className="w-full bg-[#D97941] hover:bg-[#A0522D] text-white"
+                className="w-full bg-[#D97941] hover:bg-[#A0522D] text-white transition-all duration-300 hover:shadow-lg transform hover:scale-105"
                 onClick={() => onAddToCart(product)}
               >
                 Aggiungi al Carrello
               </Button>
 
-              <div className="mt-8 space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[#E8DCC4]/80 rounded-full flex items-center justify-center">
+              <div className="mt-8 space-y-4 animate-fade-in-up">
+                <div className="flex items-center gap-4 transition-all duration-300 hover:translate-x-1">
+                  <div className="w-12 h-12 bg-[#E8DCC4]/80 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
                     <CheckCircle2 className="text-[#1A1A1A]" size={24} />
                   </div>
                   <div>
@@ -147,7 +147,7 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
                     <p className="text-sm text-gray-600">Verificata da me, filmmaker professionista, pronta all'uso.</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 transition-all duration-300 hover:translate-x-1">
                   <div className="w-12 h-12 bg-[#E8DCC4]/80 rounded-full flex items-center justify-center">
                     <CheckCircle2 className="text-[#1A1A1A]" size={24} />
                   </div>

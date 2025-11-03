@@ -12,7 +12,7 @@ export function Navbar({ onCartClick, cartItemsCount }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white border-b border-[#1A1A1A]/10 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
+    <nav className="bg-white border-b border-[#1A1A1A]/10 sticky top-0 z-50 backdrop-blur-sm bg-white/95 animate-fade-in-down">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -27,16 +27,16 @@ export function Navbar({ onCartClick, cartItemsCount }: NavbarProps) {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
+            <Link to="/" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors duration-300 hover:underline">
               Cineprese
             </Link>
-            <Link to="/about" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
+            <Link to="/about" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors duration-300 hover:underline">
               Chi Siamo
             </Link>
-            <Link to="/contact" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
+            <Link to="/contact" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors duration-300 hover:underline">
               Contatti
             </Link>
-            <Link to="/traccia-ordine" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors">
+            <Link to="/traccia-ordine" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors duration-300 hover:underline">
               Traccia Ordine
             </Link>
           </div>
@@ -45,12 +45,12 @@ export function Navbar({ onCartClick, cartItemsCount }: NavbarProps) {
           <div className="flex items-center gap-4">
             <button
               onClick={onCartClick}
-              className="relative p-2 text-[#1A1A1A] hover:text-[#A0522D] transition-colors"
+              className="relative p-2 text-[#1A1A1A] hover:text-[#A0522D] transition-all duration-300 hover:scale-110"
               aria-label="Carrello"
             >
               <ShoppingCart size={24} />
               {cartItemsCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#D97941] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                <span className="absolute -top-1 -right-1 bg-[#D97941] text-white rounded-full w-5 h-5 flex items-center justify-center text-xs animate-pulse-subtle">
                   {cartItemsCount}
                 </span>
               )}
