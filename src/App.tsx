@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 // Import images so Vite bundles them
 // Use public static paths (served from `public/imgs/`) so production serves them as /imgs/...
 const sankyo1 = '/imgs/IMG_20251031_082526_969.jpg';
+const sankyo2 = '/imgs/IMG_20251031_082527_277.jpg';
 const sankyo3 = '/imgs/IMG_20251031_082527_412.jpg';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
