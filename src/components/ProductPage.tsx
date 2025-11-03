@@ -61,21 +61,11 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
             <div>
               {/* Main Image */}
               <div className="mb-4">
-                {/* Serve modern WebP when available, fallback to JPG */}
-                {(() => {
-                  const jpg = sankyoImages[selectedImage];
-                  const webp = jpg.replace(/\.jpe?g$/i, '.webp');
-                  return (
-                    <picture>
-                      <source type="image/webp" srcSet={webp} />
-                      <ImageWithFallback
-                        src={jpg}
-                        alt={`${product.name} - Foto ${selectedImage + 1}`}
-                        className="w-full h-auto object-cover rounded-lg shadow-lg"
-                      />
-                    </picture>
-                  );
-                })()}
+                <ImageWithFallback
+                  src={sankyoImages[selectedImage]}
+                  alt={`${product.name} - Foto ${selectedImage + 1}`}
+                  className="w-full h-auto object-cover rounded-lg shadow-lg"
+                />
               </div>
               
               {/* Thumbnails */}
@@ -91,20 +81,11 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
                         : 'border-gray-200 hover:border-[#D97941]'
                     }`}
                   >
-                    {(() => {
-                      const jpg = img;
-                      const thumbWebp = jpg.replace(/\.jpe?g$/i, '.thumb.webp');
-                      return (
-                        <picture>
-                          <source type="image/webp" srcSet={`${thumbWebp} 1x`} />
-                          <ImageWithFallback
-                            src={jpg}
-                            alt={`${product.name} - Miniatura ${index + 1}`}
-                            className="w-full h-24 object-cover"
-                          />
-                        </picture>
-                      );
-                    })()}
+                    <ImageWithFallback
+                      src={img}
+                      alt={`${product.name} - Miniatura ${index + 1}`}
+                      className="w-full h-24 object-cover"
+                    />
                   </button>
                 ))}
               </div>
