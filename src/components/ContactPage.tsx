@@ -2,7 +2,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
-import { Mail, Instagram, Send } from 'lucide-react';
+import { Mail, MessageCircle, Send } from 'lucide-react';
 import { useState } from 'react';
 
 export function ContactPage() {
@@ -97,7 +97,7 @@ export function ContactPage() {
             {/* Contact Info */}
             <div className="animate-slide-in-right">
               <h2 className="mb-6 heading-xl">
-                Dove Trovarmi
+                Contattami Direttamente
               </h2>
 
               <div className="space-y-6">
@@ -109,55 +109,34 @@ export function ContactPage() {
                   <div>
                     <h3 className="mb-1">Email</h3>
                     <p className="text-[#1A1A1A]/70 mb-2">
-                      Il modo più veloce per contattarmi
+                      Il modo più affidabile. Ti rispondo entro 24 ore.
                     </p>
                     <a
-                      href="mailto:ciao@focali.it"
+                      href="mailto:antonio.pennino.mail@gmail.com"
                       className="text-[#D97941] hover:text-[#A0522D] transition-colors duration-300 font-medium"
                     >
-                      ciao@focali.it
+                      antonio.pennino.mail@gmail.com
                     </a>
                   </div>
                 </div>
 
-                {/* Instagram */}
+                {/* WhatsApp */}
                 <div className="flex gap-4 p-6 bg-[#E8DCC4]/20 rounded-lg border border-[#E8DCC4]/50 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
                   <div className="w-12 h-12 bg-[#D97941] rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110">
-                    <Instagram className="text-white" size={24} />
+                    <MessageCircle className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className="mb-1">Instagram</h3>
+                    <h3 className="mb-1">WhatsApp</h3>
                     <p className="text-[#1A1A1A]/70 mb-2">
-                      Seguimi per vedere test, dietro le quinte e cineprese in arrivo
+                      Per domande rapide o urgenti. Rispondo velocemente.
                     </p>
                     <a
-                      href="https://instagram.com/focali"
+                      href="https://wa.me/+393395959555"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#D97941] hover:text-[#A0522D] transition-colors duration-300 font-medium"
                     >
-                      @focali
-                    </a>
-                  </div>
-                </div>
-
-                {/* Telegram */}
-                <div className="flex gap-4 p-6 bg-[#E8DCC4]/20 rounded-lg border border-[#E8DCC4]/50 transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-                  <div className="w-12 h-12 bg-[#D97941] rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:scale-110">
-                    <Send className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="mb-1">Telegram</h3>
-                    <p className="text-[#1A1A1A]/70 mb-2">
-                      Scrivimi per domande rapide o per parlare di progetti
-                    </p>
-                    <a
-                      href="https://t.me/focali"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#D97941] hover:text-[#A0522D] transition-colors duration-300 font-medium"
-                    >
-                      t.me/focali
+                      +39 339 5959555
                     </a>
                   </div>
                 </div>

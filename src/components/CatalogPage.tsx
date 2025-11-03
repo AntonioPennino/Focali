@@ -54,7 +54,7 @@ export function CatalogPage({ products, onAddToCart }: CatalogPageProps) {
 
               <div className="mt-12 text-center animate-fade-in-up">
                 <p className="text-[#1A1A1A]/60 text-sm">
-                  Nuove cineprese in arrivo ogni settimana. Seguimi su Instagram per gli aggiornamenti!
+                  Nuove cineprese in arrivo ogni settimana. Scrivimi per rimanere aggiornato!
                 </p>
               </div>
             </>
@@ -70,22 +70,22 @@ export function CatalogPage({ products, onAddToCart }: CatalogPageProps) {
               </h2>
               <p className="text-[#1A1A1A]/70 max-w-md mx-auto mb-8">
                 Al momento non ci sono cineprese in catalogo, ma ne arrivano di nuove ogni settimana.
-                Seguimi sui social per essere il primo a sapere quando ne pubblico una!
+                Scrivimi per essere aggiornato in tempo reale!
               </p>
               <div className="flex gap-4 justify-center">
                 <a
-                  href="https://instagram.com/focali"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/contact"
                   className="inline-block bg-[#D97941] hover:bg-[#A0522D] text-white px-6 py-3 rounded-md transition-all duration-300 hover:shadow-lg transform hover:scale-105"
                 >
-                  Seguimi su Instagram
+                  Scrivimi su Email
                 </a>
                 <a
-                  href="/contact"
+                  href="https://wa.me/+393395959555"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#E8DCC4]/30 px-6 py-3 rounded-md transition-all duration-300"
                 >
-                  Scrivimi
+                  WhatsApp
                 </a>
               </div>
             </div>
