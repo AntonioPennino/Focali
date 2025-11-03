@@ -8,6 +8,7 @@ import { SEO } from './SEO';
 // Import images so Vite knows to bundle them
 // Use public static paths (served from `public/imgs/`) so production serves them as /imgs/... 
 const sankyo1 = '/imgs/IMG_20251031_082526_969.jpg';
+const sankyo2 = '/imgs/IMG_20251031_082527_277.jpg';
 const sankyo3 = '/imgs/IMG_20251031_082527_412.jpg';
 
 interface Product {
@@ -28,9 +29,8 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
   const { id } = useParams<{ id: string }>();
   const product = products.find((p) => p.id === parseInt(id || ''));
   
-  // Immagini della Sankyo (public static assets). The user requested removing the duplicate
-  // first/second image, so we keep two unique photos.
-  const sankyoImages = [sankyo1, sankyo3];
+  // Immagini della Sankyo - 3 angolazioni diverse
+  const sankyoImages = [sankyo1, sankyo2, sankyo3];
   
   const [selectedImage, setSelectedImage] = useState(0);
 
