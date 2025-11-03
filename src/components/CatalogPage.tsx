@@ -80,7 +80,7 @@ export function CatalogPage({ products, onAddToCart }: CatalogPageProps) {
                   Scrivimi su Email
                 </a>
                 <a
-                  href="https://wa.me/+393395959555"
+                  href="https://wa.me/+393299826583"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block border-2 border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#E8DCC4]/30 px-6 py-3 rounded-md transition-all duration-300"

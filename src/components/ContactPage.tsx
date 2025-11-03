@@ -131,12 +131,12 @@ export function ContactPage() {
                       Per domande rapide o urgenti. Rispondo velocemente.
                     </p>
                     <a
-                      href="https://wa.me/+393395959555"
+                      href="https://wa.me/+393299826583"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#D97941] hover:text-[#A0522D] transition-colors duration-300 font-medium"
                     >
-                      +39 339 5959555
+                      +39 329 9826583
                     </a>
                   </div>
                 </div>

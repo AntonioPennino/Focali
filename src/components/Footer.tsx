@@ -101,7 +101,7 @@ export function Footer() {
               Email
             </a>
             <a
-              href="https://wa.me/+393395959555"
+              href="https://wa.me/+393299826583"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/70 hover:text-[#D97941] transition-all duration-300 flex items-center gap-2"
