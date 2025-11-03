@@ -31,7 +31,7 @@ export function Navbar({ onCartClick, cartItemsCount }: NavbarProps) {
               Cineprese
             </Link>
             <Link to="/about" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors duration-300 hover:underline">
-              Chi Siamo
+              Chi sono
             </Link>
             <Link to="/contact" className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors duration-300 hover:underline">
               Contatti
@@ -83,7 +83,7 @@ export function Navbar({ onCartClick, cartItemsCount }: NavbarProps) {
                 className="text-[#1A1A1A] hover:text-[#A0522D] transition-colors py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Chi Siamo
+                Chi sono
               </Link>
               <Link
                 to="/contact"
