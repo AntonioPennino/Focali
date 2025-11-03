@@ -18,7 +18,7 @@ export function AboutPage() {
         <div className="absolute inset-0">
           <ImageWithFallback
             src="https://images.unsplash.com/photo-1549511166-d5e19c3642fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmFsb2clMjBjYW1lcmElMjBjb2xsZWN0aW9ufGVufDF8fHx8MTc2MTYzODk1Nnww&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Chi siamo"
+            alt="Chi sono"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-[#1A1A1A]/60" />
