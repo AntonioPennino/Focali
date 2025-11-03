@@ -144,19 +144,19 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
     <>
       {/* Overlay */}
       <div
-        className="fixed inset-0 bg-black/50 z-50 transition-opacity"
+        className="fixed inset-0 bg-black/50 z-50 transition-opacity animate-fade-in"
         onClick={onClose}
       />
 
       {/* Cart Panel */}
-      <div className="fixed right-0 top-0 h-full w-full md:w-[400px] bg-white z-50 shadow-2xl transform transition-transform">
+      <div className="fixed right-0 top-0 h-full w-full md:w-[400px] bg-white z-50 shadow-2xl transform transition-transform animate-slide-in-right">
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-[#1A1A1A]/10">
             <h2 className="playfair-heading">Il Tuo Carrello</h2>
             <button
               onClick={onClose}
-              className="p-2 hover:bg-[#E8DCC4]/30 rounded-full transition-colors"
+              className="p-2 hover:bg-[#E8DCC4]/30 rounded-full transition-colors duration-300 hover:scale-110"
               aria-label="Chiudi carrello"
             >
               <X size={20} />
@@ -166,38 +166,38 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
           {/* Items */}
           <div className="flex-1 overflow-y-auto p-6">
             {items.length === 0 ? (
-              <div className="text-center py-12">
-                <p className="text-[#A0522D]">Il carrello è vuoto</p>
+              <div className="text-center py-12 animate-fade-in">
+                <p className="text-[#D97941] font-medium">Il carrello è vuoto</p>
                 <p className="text-sm text-[#1A1A1A]/60 mt-2">
                   Aggiungi una cinepresa vintage per iniziare
                 </p>
               </div>
             ) : (
               <div className="space-y-4">
-                {items.map((item) => (
+                {items.map((item, idx) => (
                   <div
                     key={item.id}
-                    className="flex gap-4 p-4 bg-[#E8DCC4]/10 rounded-lg"
+                    className={`flex gap-4 p-4 bg-[#E8DCC4]/10 rounded-lg animate-fade-in-up animate-stagger-${(idx % 5) + 1} transition-all duration-300 hover:bg-[#E8DCC4]/20 hover:shadow-sm`}
                   >
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-20 h-20 object-cover rounded"
+                      className="w-20 h-20 object-cover rounded transition-transform duration-300 hover:scale-110"
                     />
                     <div className="flex-1">
                       <h4 className="text-sm mb-1">{item.name}</h4>
-                      <p className="text-xs text-[#A0522D] mb-2">{item.brand}</p>
+                      <p className="text-xs text-[#D97941] mb-2 font-medium">{item.brand}</p>
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => onUpdateQuantity(item.id, Math.max(1, item.quantity - 1))}
-                          className="w-6 h-6 rounded border border-[#1A1A1A]/20 hover:bg-[#E8DCC4]/30 text-sm"
+                          className="w-6 h-6 rounded border border-[#1A1A1A]/20 hover:bg-[#D97941]/20 text-sm transition-all duration-300"
                         >
                           −
                         </button>
                         <span className="text-sm w-8 text-center">{item.quantity}</span>
                         <button
                           onClick={() => onUpdateQuantity(item.id, item.quantity + 1)}
-                          className="w-6 h-6 rounded border border-[#1A1A1A]/20 hover:bg-[#E8DCC4]/30 text-sm"
+                          className="w-6 h-6 rounded border border-[#1A1A1A]/20 hover:bg-[#D97941]/20 text-sm transition-all duration-300"
                         >
                           +
                         </button>
@@ -206,12 +206,12 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
                     <div className="flex flex-col items-end justify-between">
                       <button
                         onClick={() => onRemoveItem(item.id)}
-                        className="text-[#A0522D] hover:text-[#1A1A1A] transition-colors"
+                        className="text-[#A0522D] hover:text-[#D97941] transition-colors duration-300 hover:scale-110"
                         aria-label="Rimuovi"
                       >
                         <Trash2 size={16} />
                       </button>
-                      <p className="text-sm">€{item.price * item.quantity}</p>
+                      <p className="text-sm font-medium">€{item.price * item.quantity}</p>
                     </div>
                   </div>
                 ))}
@@ -221,15 +221,15 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
 
           {/* Footer */}
           {items.length > 0 && (
-            <div className="border-t border-[#1A1A1A]/10 p-6 space-y-4">
+            <div className="border-t border-[#1A1A1A]/10 p-6 space-y-4 animate-fade-in-up">
               <div className="flex items-center justify-between">
                 <span>Totale</span>
-                <span className="playfair-large">
+                <span className="playfair-large text-[#D97941]">
                   €{total.toFixed(2)}
                 </span>
               </div>
               {isProcessing ? (
-                <div className="text-center">
+                <div className="text-center animate-pulse-subtle">
                   <p>Processando il pagamento...</p>
                 </div>
               ) : (
@@ -245,7 +245,7 @@ export function Cart({ isOpen, onClose, items, onRemoveItem, onUpdateQuantity, o
               )}
               <Button
                 variant="outline"
-                className="w-full border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#E8DCC4]/30"
+                className="w-full border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#E8DCC4]/30 transition-all duration-300"
                 onClick={onClose}
                 disabled={isProcessing}
               >

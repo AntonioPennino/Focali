@@ -45,7 +45,7 @@ export function FAQPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-[#E8DCC4]/30 py-20">
+      <section className="bg-[#E8DCC4]/30 py-20 animate-fade-in-down">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="mb-4 heading-hero-small">
             Domande Frequenti
@@ -61,8 +61,11 @@ export function FAQPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-sm border border-[#E8DCC4]">
-                <h3 className="text-[#1A1A1A] mb-3 heading-md">
+              <div 
+                key={index} 
+                className={`bg-white rounded-lg p-6 shadow-sm border border-[#E8DCC4] animate-fade-in-up animate-stagger-${(index % 5) + 1} transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-[#D97941]`}
+              >
+                <h3 className="text-[#1A1A1A] mb-3 heading-md text-[#D97941]">
                   {faq.question}
                 </h3>
                 <p className="text-[#1A1A1A]/80">
@@ -75,7 +78,7 @@ export function FAQPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-[#1A1A1A] text-white">
+      <section className="py-16 bg-[#1A1A1A] text-white animate-fade-in-up">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="mb-4 heading-xl">
             Non hai trovato la risposta?
@@ -85,7 +88,7 @@ export function FAQPage() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-[#D97941] hover:bg-[#A0522D] text-white px-8 py-3 rounded-md transition-colors"
+            className="inline-block bg-[#D97941] hover:bg-[#A0522D] text-white px-8 py-3 rounded-md transition-all duration-300 hover:shadow-lg transform hover:scale-105"
           >
             Contattami
           </a>

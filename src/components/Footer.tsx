@@ -6,9 +6,9 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Logo & Description */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 md:col-span-2 animate-fade-in-up">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg">
                 <span className="text-[#1A1A1A] logo-letter">F</span>
               </div>
               <span className="logo-text">
@@ -25,26 +25,26 @@ export function Footer() {
           </div>
 
           {/* Links */}
-          <div>
-            <h4 className="mb-4">Esplora</h4>
+          <div className="animate-fade-in-up animate-stagger-2">
+            <h4 className="mb-4 text-[#D97941]">Esplora</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/catalogo" className="text-white/70 hover:text-[#D97941] transition-colors">
+                <a href="/catalogo" className="text-white/70 hover:text-[#D97941] transition-colors duration-300">
                   Catalogo
                 </a>
               </li>
               <li>
-                <a href="/about" className="text-white/70 hover:text-[#D97941] transition-colors">
+                <a href="/about" className="text-white/70 hover:text-[#D97941] transition-colors duration-300">
                   Chi Sono
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-white/70 hover:text-[#D97941] transition-colors">
+                <a href="/contact" className="text-white/70 hover:text-[#D97941] transition-colors duration-300">
                   Contatti
                 </a>
               </li>
               <li>
-                <a href="/traccia-ordine" className="text-white/70 hover:text-[#D97941] transition-colors">
+                <a href="/traccia-ordine" className="text-white/70 hover:text-[#D97941] transition-colors duration-300">
                   Traccia Ordine
                 </a>
               </li>
@@ -52,31 +52,31 @@ export function Footer() {
           </div>
 
           {/* Support */}
-          <div>
-            <h4 className="mb-4">Legale</h4>
+          <div className="animate-fade-in-up animate-stagger-3">
+            <h4 className="mb-4 text-[#D97941]">Legale</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/privacy-policy" className="text-white/70 hover:text-[#D97941] transition-colors">
+                <a href="/privacy-policy" className="text-white/70 hover:text-[#D97941] transition-colors duration-300">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="/cookie-policy" className="text-white/70 hover:text-[#D97941] transition-colors">
+                <a href="/cookie-policy" className="text-white/70 hover:text-[#D97941] transition-colors duration-300">
                   Cookie Policy
                 </a>
               </li>
               <li>
-                <a href="/termini-e-condizioni" className="text-white/70 hover:text-[#D97941] transition-colors">
+                <a href="/termini-e-condizioni" className="text-white/70 hover:text-[#D97941] transition-colors duration-300">
                   Termini e Condizioni
                 </a>
               </li>
               <li>
-                <a href="/spedizioni" className="text-white/70 hover:text-[#D97941] transition-colors">
+                <a href="/spedizioni" className="text-white/70 hover:text-[#D97941] transition-colors duration-300">
                   Spedizioni
                 </a>
               </li>
               <li>
-                <a href="/faq" className="text-white/70 hover:text-[#D97941] transition-colors">
+                <a href="/faq" className="text-white/70 hover:text-[#D97941] transition-colors duration-300">
                   FAQ
                 </a>
               </li>
@@ -85,7 +85,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 animate-fade-in-up">
           <p className="text-white/60 text-sm">
             © 2025 Focali. Tutti i diritti riservati. Vendita da privato.
           </p>
@@ -96,7 +96,7 @@ export function Footer() {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-[#D97941] transition-colors"
+              className="text-white/70 hover:text-[#D97941] transition-all duration-300 hover:scale-110"
               aria-label="Instagram"
             >
               <Instagram size={20} />
@@ -105,7 +105,7 @@ export function Footer() {
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-[#D97941] transition-colors"
+              className="text-white/70 hover:text-[#D97941] transition-all duration-300 hover:scale-110"
               aria-label="YouTube"
             >
               <Youtube size={20} />
@@ -114,7 +114,7 @@ export function Footer() {
               href="https://tiktok.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-[#D97941] transition-colors text-sm"
+              className="text-white/70 hover:text-[#D97941] transition-all duration-300 hover:scale-110 text-sm"
               aria-label="TikTok"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
