@@ -59,33 +59,48 @@ export function ProductPage({ products, onAddToCart }: ProductPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Product Images Gallery */}
             <div>
-              {/* Main Image */}
-              <div className="mb-4">
+              {/* Main Image - Large */}
+              <div className="mb-6 bg-white rounded-lg overflow-hidden shadow-lg">
                 <ImageWithFallback
                   src={sankyoImages[selectedImage]}
                   alt={`${product.name} - Foto ${selectedImage + 1}`}
-                  className="w-full h-auto object-cover rounded-lg shadow-lg"
+                  className="w-full h-full object-cover"
                 />
               </div>
               
-              {/* Thumbnails */}
-              <div className="grid grid-cols-3 gap-4">
+              {/* Image Counter */}
+              <div className="text-center mb-4 text-sm text-gray-600">
+                Foto {selectedImage + 1} di {sankyoImages.length}
+              </div>
+              
+              {/* Thumbnails - Horizontal Strip */}
+              <div className="flex gap-3 justify-center">
                 {sankyoImages.map((img, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
                     aria-label={`Visualizza foto ${index + 1}`}
-                    className={`relative overflow-hidden rounded-lg border-2 transition-all ${
+                    className={`relative overflow-hidden rounded-md border-2 transition-all transform hover:scale-105 ${
                       selectedImage === index 
-                        ? 'border-[#A0522D] shadow-md' 
-                        : 'border-gray-200 hover:border-[#D97941]'
+                        ? 'border-[#D97941] shadow-md ring-2 ring-[#D97941] ring-offset-2' 
+                        : 'border-gray-300 hover:border-[#A0522D] opacity-70 hover:opacity-100'
                     }`}
                   >
-                    <ImageWithFallback
-                      src={img}
-                      alt={`${product.name} - Miniatura ${index + 1}`}
-                      className="w-full h-24 object-cover"
-                    />
+                    <div className="relative w-20 h-20">
+                      <ImageWithFallback
+                        src={img}
+                        alt={`Foto ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                      {/* Number Badge */}
+                      <div className={`absolute bottom-1 right-1 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                        selectedImage === index 
+                          ? 'bg-[#D97941] text-white' 
+                          : 'bg-gray-800 text-white'
+                      }`}>
+                        {index + 1}
+                      </div>
+                    </div>
                   </button>
                 ))}
               </div>
